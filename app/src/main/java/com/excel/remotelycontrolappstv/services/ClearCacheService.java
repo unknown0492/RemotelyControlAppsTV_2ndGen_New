@@ -25,7 +25,8 @@ public class ClearCacheService extends Service {
     public int onStartCommand( Intent intent, int flags, int startId ) {
         Log.d( TAG, "ClearCacheService started" );
 
-        
+        // Clear the DownloadManager data
+        UtilShell.executeShellCommandWithOp( "rm /data/data/com.android.providers.downloads/databases/downloads.db" );
 
         deleteApplicationData( context );
 

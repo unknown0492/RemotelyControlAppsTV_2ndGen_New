@@ -13,7 +13,7 @@
         android:label="Tests for com.excel.remotelycontrolappstv.secondgen"
         android:targetPackage="com.excel.remotelycontrolappstv.secondgen" />
 
-    <application>
+    <application android:debuggable="true" >
         <uses-library android:name="android.test.runner" />
     </application>
 

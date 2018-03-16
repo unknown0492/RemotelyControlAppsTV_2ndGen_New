@@ -1,31 +1,47 @@
 -- Merging decision tree log ---
 manifest
-ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:2:1-59:12
+ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:2:1-67:12
+INJECTED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:2:1-67:12
+INJECTED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:2:1-67:12
+INJECTED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:2:1-67:12
+MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\Sohail\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\088bf81313a6f3409a87d123592ded48\AndroidManifest.xml:17:1-27:12
+MERGED from [:ExcelClassLibrary-debug] C:\Users\Sohail\.gradle\caches\transforms-1\files-1.1\ExcelClassLibrary-debug.aar\dadd19ef72d97b3c469a1f83fba9389a\AndroidManifest.xml:2:1-23:12
+MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\Sohail\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.4.0.aar\8612f53de6d6f42fa897fc73ee61fa11\AndroidManifest.xml:2:1-9:12
+MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\Sohail\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.4.0.aar\ff03f7495c7f1cafe902b96f62f2c595\AndroidManifest.xml:2:1-9:12
+MERGED from [com.android.support:support-v4:23.4.0] C:\Users\Sohail\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\391e3284ecdcf59f5e78e76850d3cfd6\AndroidManifest.xml:17:1-24:12
+INJECTED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:2:1-67:12
+INJECTED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:2:1-67:12
+INJECTED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:2:1-67:12
 	package
 		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:4:5-56
 		INJECTED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml
 		INJECTED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml
+		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:2:1-67:12
 		INJECTED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:3:5-51
-	xmlns:android
-		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:2:11-69
 	android:versionCode
 		INJECTED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml
+		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:2:1-67:12
 		INJECTED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
 ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:6:5-81
 	android:name
 		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:6:22-78
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:7:5-79
+MERGED from [:ExcelClassLibrary-debug] C:\Users\Sohail\.gradle\caches\transforms-1\files-1.1\ExcelClassLibrary-debug.aar\dadd19ef72d97b3c469a1f83fba9389a\AndroidManifest.xml:12:5-79
+MERGED from [:ExcelClassLibrary-debug] C:\Users\Sohail\.gradle\caches\transforms-1\files-1.1\ExcelClassLibrary-debug.aar\dadd19ef72d97b3c469a1f83fba9389a\AndroidManifest.xml:12:5-79
 	android:name
 		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:7:22-76
 uses-permission#android.permission.ACCESS_WIFI_STATE
 ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:8:5-76
-MERGED from [RemotelyControlAppsTV_2ndGen:ExcelClassLibrary-debug:unspecified] G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\build\intermediates\exploded-aar\RemotelyControlAppsTV_2ndGen\ExcelClassLibrary-debug\unspecified\AndroidManifest.xml:11:5-76
+MERGED from [:ExcelClassLibrary-debug] C:\Users\Sohail\.gradle\caches\transforms-1\files-1.1\ExcelClassLibrary-debug.aar\dadd19ef72d97b3c469a1f83fba9389a\AndroidManifest.xml:13:5-76
+MERGED from [:ExcelClassLibrary-debug] C:\Users\Sohail\.gradle\caches\transforms-1\files-1.1\ExcelClassLibrary-debug.aar\dadd19ef72d97b3c469a1f83fba9389a\AndroidManifest.xml:13:5-76
 	android:name
 		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:8:22-73
 uses-permission#android.permission.CHANGE_NETWORK_STATE
@@ -42,140 +58,198 @@ ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\mai
 		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:11:22-64
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
 ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:12:5-80
+MERGED from [:ExcelClassLibrary-debug] C:\Users\Sohail\.gradle\caches\transforms-1\files-1.1\ExcelClassLibrary-debug.aar\dadd19ef72d97b3c469a1f83fba9389a\AndroidManifest.xml:11:5-80
+MERGED from [:ExcelClassLibrary-debug] C:\Users\Sohail\.gradle\caches\transforms-1\files-1.1\ExcelClassLibrary-debug.aar\dadd19ef72d97b3c469a1f83fba9389a\AndroidManifest.xml:11:5-80
 	android:name
 		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:12:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
 ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:13:5-81
+MERGED from [:ExcelClassLibrary-debug] C:\Users\Sohail\.gradle\caches\transforms-1\files-1.1\ExcelClassLibrary-debug.aar\dadd19ef72d97b3c469a1f83fba9389a\AndroidManifest.xml:14:5-81
+MERGED from [:ExcelClassLibrary-debug] C:\Users\Sohail\.gradle\caches\transforms-1\files-1.1\ExcelClassLibrary-debug.aar\dadd19ef72d97b3c469a1f83fba9389a\AndroidManifest.xml:14:5-81
 	android:name
 		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:13:22-78
+uses-permission#android.permission.WRITE_SETTINGS
+ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:14:5-73
+	android:name
+		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:14:22-70
+uses-permission#android.permission.WRITE_SECURE_SETTINGS
+ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:15:5-16:47
+	tools:ignore
+		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:16:9-44
+	android:name
+		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:15:22-77
 application
-ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:16:5-57:19
-MERGED from [com.android.support:appcompat-v7:23.4.0] G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:animated-vector-drawable:23.4.0] G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.4.0\AndroidManifest.xml:7:5-20
-MERGED from [com.android.support:support-vector-drawable:23.4.0] G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.4.0\AndroidManifest.xml:7:5-20
-MERGED from [com.android.support:support-v4:23.4.0] G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\AndroidManifest.xml:22:5-20
-MERGED from [RemotelyControlAppsTV_2ndGen:ExcelClassLibrary-debug:unspecified] G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\build\intermediates\exploded-aar\RemotelyControlAppsTV_2ndGen\ExcelClassLibrary-debug\unspecified\AndroidManifest.xml:13:5-18:43
-	android:label
-		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:19:9-41
+ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:18:5-65:19
+MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\Sohail\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\088bf81313a6f3409a87d123592ded48\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\Sohail\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\088bf81313a6f3409a87d123592ded48\AndroidManifest.xml:25:5-20
+MERGED from [:ExcelClassLibrary-debug] C:\Users\Sohail\.gradle\caches\transforms-1\files-1.1\ExcelClassLibrary-debug.aar\dadd19ef72d97b3c469a1f83fba9389a\AndroidManifest.xml:16:5-21:43
+MERGED from [:ExcelClassLibrary-debug] C:\Users\Sohail\.gradle\caches\transforms-1\files-1.1\ExcelClassLibrary-debug.aar\dadd19ef72d97b3c469a1f83fba9389a\AndroidManifest.xml:16:5-21:43
+MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\Sohail\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.4.0.aar\8612f53de6d6f42fa897fc73ee61fa11\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\Sohail\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.4.0.aar\8612f53de6d6f42fa897fc73ee61fa11\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\Sohail\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.4.0.aar\ff03f7495c7f1cafe902b96f62f2c595\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\Sohail\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.4.0.aar\ff03f7495c7f1cafe902b96f62f2c595\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-v4:23.4.0] C:\Users\Sohail\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\391e3284ecdcf59f5e78e76850d3cfd6\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.4.0] C:\Users\Sohail\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\391e3284ecdcf59f5e78e76850d3cfd6\AndroidManifest.xml:22:5-20
+	android:sharedUserId
+		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:26:9-50
 	android:supportsRtl
-		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:20:9-35
-	android:allowBackup
-		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:17:9-35
+		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:22:9-35
+	android:label
+		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:21:9-41
+	coreApp
+		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:25:9-23
 	android:icon
-		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:18:9-45
+		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:20:9-45
+	android:allowBackup
+		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:19:9-35
 	android:theme
-		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:21:9-68
-		REJECTED from [RemotelyControlAppsTV_2ndGen:ExcelClassLibrary-debug:unspecified] G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\build\intermediates\exploded-aar\RemotelyControlAppsTV_2ndGen\ExcelClassLibrary-debug\unspecified\AndroidManifest.xml:18:9-40
+		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:23:9-68
+		REJECTED from [:ExcelClassLibrary-debug] C:\Users\Sohail\.gradle\caches\transforms-1\files-1.1\ExcelClassLibrary-debug.aar\dadd19ef72d97b3c469a1f83fba9389a\AndroidManifest.xml:21:9-40
 	tools:replace
-		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:22:9-38
+		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:24:9-38
 activity#com.excel.remotelycontrolappstv.secondgen.MainActivity
-ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:24:9-30:20
+ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:27:9-33:20
 	android:name
-		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:24:19-47
+		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:27:19-47
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:25:13-29:29
+ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:28:13-32:29
 action#android.intent.action.MAIN
-ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:26:17-69
+ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:29:17-69
 	android:name
-		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:26:25-66
+		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:29:25-66
 category#android.intent.category.LAUNCHER
-ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:28:17-77
+ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:31:17-77
 	android:name
-		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:28:27-74
+		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:31:27-74
 receiver#com.excel.remotelycontrolappstv.secondgen.Receiver
-ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:32:9-46:20
+ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:35:9-53:20
 	android:name
-		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:32:19-43
-intent-filter#android.intent.action.BOOT_COMPLETED+android.net.conn.CONNECTIVITY_CHANGE+boot_completed+broadcast_airplay_credentials+connectivity_changed+get_box_configuration+get_launcher_config+get_preinstall_apps_info+start_listening_service+update_box_active_status+update_box_bootup_time
-ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:33:13-45:29
+		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:35:19-43
+intent-filter#android.intent.action.BOOT_COMPLETED+android.net.conn.CONNECTIVITY_CHANGE+boot_completed+broadcast_airplay_credentials+clear_application_cache+connectivity_changed+execute_script+get_box_configuration+get_launcher_config+get_preinstall_apps_info+postpone_reboot+schedule_reboot+start_listening_service+update_box_active_status+update_box_bootup_time
+ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:36:13-52:29
 action#android.intent.action.BOOT_COMPLETED
-ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:34:17-79
+ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:37:17-79
 	android:name
-		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:34:25-76
+		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:37:25-76
 action#boot_completed
-ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:35:17-57
+ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:38:17-57
 	android:name
-		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:35:25-54
+		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:38:25-54
 action#android.net.conn.CONNECTIVITY_CHANGE
-ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:36:17-79
+ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:39:17-79
 	android:name
-		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:36:25-76
+		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:39:25-76
 action#connectivity_changed
-ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:37:17-63
+ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:40:17-63
 	android:name
-		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:37:25-60
+		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:40:25-60
 action#start_listening_service
-ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:38:17-66
+ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:41:17-66
 	android:name
-		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:38:25-63
+		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:41:25-63
 action#update_box_bootup_time
-ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:39:17-65
+ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:42:17-65
 	android:name
-		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:39:25-62
+		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:42:25-62
 action#update_box_active_status
-ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:40:17-67
+ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:43:17-67
 	android:name
-		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:40:25-64
+		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:43:25-64
 action#get_preinstall_apps_info
-ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:41:17-67
+ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:44:17-67
 	android:name
-		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:41:25-64
+		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:44:25-64
 action#get_launcher_config
-ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:42:17-62
+ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:45:17-62
 	android:name
-		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:42:25-59
+		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:45:25-59
 action#get_box_configuration
-ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:43:17-64
+ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:46:17-64
 	android:name
-		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:43:25-61
+		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:46:25-61
 action#broadcast_airplay_credentials
-ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:44:17-72
+ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:47:17-72
 	android:name
-		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:44:25-69
+		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:47:25-69
+action#schedule_reboot
+ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:48:17-58
+	android:name
+		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:48:25-55
+action#postpone_reboot
+ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:49:17-58
+	android:name
+		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:49:25-55
+action#clear_application_cache
+ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:50:17-66
+	android:name
+		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:50:25-63
+action#execute_script
+ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:51:17-57
+	android:name
+		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:51:25-54
 service#com.excel.remotelycontrolappstv.secondgen.ListeningService
-ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:48:9-94
+ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:55:9-53
 	android:name
-		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:48:18-91
+		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:55:18-50
 service#com.excel.remotelycontrolappstv.services.UpdateBoxActiveStatusService
-ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:49:9-105
+ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:56:9-105
 	android:name
-		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:49:18-102
+		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:56:18-102
 service#com.excel.remotelycontrolappstv.services.UpdateBoxBootStatusService
-ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:50:9-103
+ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:57:9-103
 	android:name
-		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:50:18-100
+		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:57:18-100
 service#com.excel.remotelycontrolappstv.services.GetPreinstallAppsInfoService
-ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:51:9-105
+ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:58:9-105
 	android:name
-		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:51:18-102
+		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:58:18-102
 service#com.excel.remotelycontrolappstv.services.GetLauncherConfigService
-ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:52:9-101
+ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:59:9-101
 	android:name
-		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:52:18-98
+		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:59:18-98
 service#com.excel.remotelycontrolappstv.services.GetBoxConfigService
-ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:53:9-96
+ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:60:9-96
 	android:name
-		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:53:18-93
+		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:60:18-93
 service#com.excel.remotelycontrolappstv.services.HotspotStarterService
-ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:54:9-98
+ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:61:9-98
 	android:name
-		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:54:18-95
+		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:61:18-95
 service#com.excel.remotelycontrolappstv.services.BroadcastAirplayService
-ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:55:9-100
+ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:62:9-100
 	android:name
-		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:55:18-97
+		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:62:18-97
+service#com.excel.remotelycontrolappstv.services.ScheduleRebootService
+ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:63:9-98
+	android:name
+		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:63:18-95
+service#com.excel.remotelycontrolappstv.services.ClearCacheService
+ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:64:9-94
+	android:name
+		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml:64:18-91
 uses-sdk
 INJECTED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.android.support:appcompat-v7:23.4.0] G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:animated-vector-drawable:23.4.0] G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.4.0\AndroidManifest.xml:5:5-44
-MERGED from [com.android.support:support-vector-drawable:23.4.0] G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.4.0\AndroidManifest.xml:5:5-43
-MERGED from [com.android.support:support-v4:23.4.0] G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\AndroidManifest.xml:20:5-43
-MERGED from [RemotelyControlAppsTV_2ndGen:ExcelClassLibrary-debug:unspecified] G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\build\intermediates\exploded-aar\RemotelyControlAppsTV_2ndGen\ExcelClassLibrary-debug\unspecified\AndroidManifest.xml:7:5-9:41
+INJECTED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml
+INJECTED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\Sohail\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\088bf81313a6f3409a87d123592ded48\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\Sohail\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\088bf81313a6f3409a87d123592ded48\AndroidManifest.xml:21:5-23:78
+MERGED from [:ExcelClassLibrary-debug] C:\Users\Sohail\.gradle\caches\transforms-1\files-1.1\ExcelClassLibrary-debug.aar\dadd19ef72d97b3c469a1f83fba9389a\AndroidManifest.xml:7:5-9:41
+MERGED from [:ExcelClassLibrary-debug] C:\Users\Sohail\.gradle\caches\transforms-1\files-1.1\ExcelClassLibrary-debug.aar\dadd19ef72d97b3c469a1f83fba9389a\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\Sohail\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.4.0.aar\8612f53de6d6f42fa897fc73ee61fa11\AndroidManifest.xml:5:5-44
+MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\Sohail\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.4.0.aar\8612f53de6d6f42fa897fc73ee61fa11\AndroidManifest.xml:5:5-44
+MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\Sohail\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.4.0.aar\ff03f7495c7f1cafe902b96f62f2c595\AndroidManifest.xml:5:5-43
+MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\Sohail\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.4.0.aar\ff03f7495c7f1cafe902b96f62f2c595\AndroidManifest.xml:5:5-43
+MERGED from [com.android.support:support-v4:23.4.0] C:\Users\Sohail\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\391e3284ecdcf59f5e78e76850d3cfd6\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.4.0] C:\Users\Sohail\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\391e3284ecdcf59f5e78e76850d3cfd6\AndroidManifest.xml:20:5-43
+INJECTED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml
+INJECTED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml
 	tools:overrideLibrary
-		ADDED from [com.android.support:appcompat-v7:23.4.0] G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\AndroidManifest.xml:23:9-75
+		ADDED from [com.android.support:appcompat-v7:23.4.0] C:\Users\Sohail\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\088bf81313a6f3409a87d123592ded48\AndroidManifest.xml:23:9-75
 	android:targetSdkVersion
 		INJECTED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml
+		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml
 		INJECTED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
 		INJECTED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml
+		ADDED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml
 		INJECTED from G:\Workspaces\android_studio\RemotelyControlAppsTV_2ndGen\app\src\main\AndroidManifest.xml

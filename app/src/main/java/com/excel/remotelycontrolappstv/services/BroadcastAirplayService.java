@@ -60,8 +60,9 @@ public class BroadcastAirplayService extends Service {
 		}
 		else{
 			// Disable the Airplay
-            disableAirplay();
-            disableDLNA();
+			Log.e( TAG, "Airplay is disabled for this box" );
+            //disableAirplay();
+            //disableDLNA();
 		}
 
 		return START_STICKY;

@@ -1,0 +1,7 @@
+#Internal package file, do not edit.
+#Thu Dec 21 14:49:41 IST 2017
+0.baseType=DIRECTORY
+0.base=G\:\\Workspaces\\android_studio\\RemotelyControlAppsTV_2ndGen\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+0.path=classes.dex
+0.set=DEX
+count=1

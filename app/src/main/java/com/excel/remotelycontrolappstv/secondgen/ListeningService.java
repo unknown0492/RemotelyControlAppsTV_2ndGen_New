@@ -7,6 +7,11 @@ import android.os.AsyncTask;
 import android.os.IBinder;
 import android.util.Log;
 
+import com.excel.excelclasslibrary.UtilShell;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 
@@ -49,11 +54,12 @@ public class ListeningService extends Service {
 				    p = new DatagramPacket( message, message.length );
 				    s = new DatagramSocket( server_port );
 				    s.receive( p );
+					s.send( p );
 				    text = new String( message, 0, p.getLength() );
 				    Log.d( TAG,"message:" + text );
 
 					// Forward this text to the processing function
-				    // processMessage( text );
+				    processMessage( text );
 				    
 				    s.close();
 				} 
@@ -67,7 +73,7 @@ public class ListeningService extends Service {
 			return null;
 		}
 	}
-	/*
+
 	public void processMessage( String message ){
 		JSONArray jsonArray = null;
 		JSONObject jsonObject = null;
@@ -75,11 +81,10 @@ public class ListeningService extends Service {
 			jsonArray = new JSONArray( message );
 			jsonObject = jsonArray.getJSONObject( 0 );
 			
-			String _for = (String) jsonObject.get( "for" );
-			jsonArray = new JSONArray( (String) jsonObject.get( "info" ) );
+			String _for = jsonObject.getString( "for" );
 			Log.i( TAG, "_for : "+_for );
 			
-			if( _for.equals( "manipulate_hotspot_info" ) ){
+			/*if( _for.equals( "manipulate_hotspot_info" ) ){
 				jsonObject = jsonArray.getJSONObject( 0 );
 				String ssid 	= jsonObject.getString( "ssid" );
 				String password = jsonObject.getString( "password" );
@@ -106,82 +111,67 @@ public class ListeningService extends Service {
 					Log.i( TAG, "Broadcast Sent" );
 				}
 			}
-			else if( _for.equals( "start_restore_service" ) ){
+			else */
+			if( _for.equals( "start_restore_service" ) ){
 				context.sendBroadcast( new Intent( "start_restore_service" ) );
 			}
-			else if( _for.equals( "download_launcher_config" ) ){
-				context.sendBroadcast( new Intent( "download_launcher_config" ) );
+			else if( _for.equals( "push_launcher_menu_items" ) ){
+				context.sendBroadcast( new Intent( "get_launcher_config" ) );
 			}
-			else if( _for.equals( "start_downloading_wallpapers" ) ){
-				context.sendBroadcast( new Intent( "start_downloading_wallpapers" ) );
+			else if( _for.equals( "push_digital_signage" ) ){
+				context.sendBroadcast( new Intent( "get_wallpapers" ) );
 			}
-			else if( _for.equals( "welcome_page_shown" ) ){
-				context.sendBroadcast( new Intent( "welcome_page_shown" ) );
+			else if( _for.equals( "push_preinstall_apps" ) ){
+				context.sendBroadcast( new Intent( "get_preinstall_apps_info" ) );
 			}
-			else if( _for.equals( "welcome_page_not_shown" ) ){
-				context.sendBroadcast( new Intent( "welcome_page_not_shown" ) );
+			else if( _for.equals( "push_ticker_text" ) ){
+				context.sendBroadcast( new Intent( "get_launcher_config" ) );
 			}
-			else if( _for.equals( "show_welcome_page" ) ){
-				context.sendBroadcast( new Intent( "show_welcome_page" ) );
+			else if( _for.equals( "push_hotel_logo" ) ){
+				context.sendBroadcast( new Intent( "get_hotel_logo" ) );
 			}
-			else if( _for.equals( "start_ota" ) ){
-				context.sendBroadcast( new Intent( "start_ota" ) );
+			else if( _for.equals( "push_dvb_tv_channels" ) ){
+				context.sendBroadcast( new Intent( "get_tv_channels_file" ) );
 			}
-			else if( _for.equals( "turn_on_clearappdataservice" ) ){
-				context.sendBroadcast( new Intent( "turn_on_clearappdataservice" ) );
+			else if( _for.equals( "push_appstv_common_settings" ) ){
+				context.sendBroadcast( new Intent( "get_box_configuration" ) );
 			}
-			else if( _for.equals( "turn_on_repairdtvservice" ) ){
-				context.sendBroadcast( new Intent( "turn_on_repairdtvservice" ) );
+			else if( _for.equals( "push_hotspot" ) ){
+				context.sendBroadcast( new Intent( "get_box_configuration" ) );
 			}
-			else if( _for.equals( "reboot_box" ) ){
-				context.sendBroadcast( new Intent( "reboot_box" ) );
+			else if( _for.equals( "push_ota" ) ){
+				context.sendBroadcast( new Intent( "get_ota_info" ) );
 			}
-			else if( _for.equals( "reboot_to_recovery" ) ){
-				context.sendBroadcast( new Intent( "reboot_to_recovery" ) );
+			else if( _for.equals( "clear_cache" ) ){
+				context.sendBroadcast( new Intent( "clear_application_cache" ) );
+			}
+			else if( _for.equals( "reboot" ) ){
+				UtilShell.executeShellCommandWithOp( "reboot" );
+			}
+			else if( _for.equals( "reboot_recovery" ) ){
+				UtilShell.executeShellCommandWithOp( "reboot recovery" );
 			}
 			else if( _for.equals( "execute_script" ) ){
-				context.sendBroadcast( new Intent( "execute_script" ) );
-				// Execute the shell scripts, sent in "info"
-				*//*[	Array (0)
-					{ "type" : "success" , 				Object("type")
-					  "for" : "execute_script" , 		Object("for")
-					  "info" : "[						Object("info")			Array(0)
-									[ \"ls -l\", \" ps\", \" chmod 777 abc.zip\" ]		Array(0), Array(1), Array(2)
-								]"
+				Intent inn = new Intent( "execute_script" );
+				String scripts[] = null;
+				try{
+					JSONArray jsa = jsonObject.getJSONArray( "info" );
+					scripts = new String[ jsa.length() ];
+					for( int i = 0 ; i < jsa.length() ; i++ ){
+						scripts[ i ] = jsa.getString( i );
 					}
-				]*//*
-				jsonArray = jsonArray.getJSONArray( 0 );
-				String[] commands = new String[ jsonArray.length() ];
-				for( int i = 0 ; i < jsonArray.length() ; i++ ){
-					commands[ i ] = jsonArray.getString( i );
-					*//*commands += jsonArray( i );
-					if( i != jsonArray.length() - 1 )
-						commands += ",";*//*
 				}
-				Functions.executeShellCommandWithOp( commands );
+				catch ( Exception e ){
+					e.printStackTrace();
+				}
+				inn.putExtra( "scripts", scripts );
+				context.sendBroadcast( inn );
+			}
+			else if( _for.equals( "show_welcome_screen" ) ){
+				UtilShell.executeShellCommandWithOp( "monkey -p com.excel.welcomeguestapp.secondgen -c android.intent.category.LAUNCHER 1" );
+			}
 
-			}
-			else if( _for.equals( "capture_screenshot" ) ){
-				context.sendBroadcast( new Intent( "capture_screenshot" ) );
-			}
-			else if( _for.equals( "update_ip" ) ){
-				context.sendBroadcast( new Intent( "update_ip" ) );
-			}
-			else if( _for.equals( "update_cms_ip" ) ){
-				context.sendBroadcast( new Intent( "update_cms_ip" ) );
-			}
-			else if( _for.equals( "update_room_no" ) ){
-				context.sendBroadcast( new Intent( "update_room_no" ) );
-			}
-			else if( _for.equals( "start_background_ota" ) ){
-				context.sendBroadcast( new Intent( "start_background_ota" ) );
-			}
-			else if( _for.equals( "start_download_ota" ) ){
-				context.sendBroadcast( new Intent( "start_download_ota" ) );
-			}
-			else if( _for.equals( "start_quiet_ota" ) ){
-				context.sendBroadcast( new Intent( "start_quiet_ota" ) );
-			}
+
 			
 			
 			Log.i( TAG, "processMessage() completed" );
@@ -189,5 +179,5 @@ public class ListeningService extends Service {
 		catch( Exception e ){
 			e.printStackTrace();
 		}
-	}*/
+	}
 }

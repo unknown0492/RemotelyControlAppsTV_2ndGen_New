@@ -127,6 +127,7 @@ public class GetBoxConfigService extends Service {
         language_codes = new String[ langs.length ];
         for( int i = 0; i < langs.length ; i++ ){
             language_codes[ i ] = langs[ i ].getLanguage();
+            //Log.d(TAG, language_codes[i]);
         }
         language_codes = UtilArray.removeDuplicates( language_codes );
 
@@ -134,13 +135,15 @@ public class GetBoxConfigService extends Service {
         languages = new String[ language_codes.length ];
         for( int i = 0; i < language_codes.length ; i++ ){
             languages[ i ] = new Locale( language_codes[ i ] ).getDisplayLanguage();
+            //Log.d(TAG, language_codes[i]);
         }
 
         language_map = new HashMap<String,String>();
         for( int i = 0; i < language_codes.length ; i++ ){
             language_map.put( languages[ i ], language_codes[ i ] );
+            //Log.d(TAG, languages[i] + ","+ language_codes[i]);
         }
-        languages = new String[ language_codes.length ];
+        //languages = new String[ language_codes.length ];
 
     }
 
@@ -149,7 +152,7 @@ public class GetBoxConfigService extends Service {
     }
 
     public void setLocaleLanguage( String language ){
-        // Log.d( TAG, ":" + language + ":" + language_map.get( language ) + ":" );
+        Log.d( TAG, ":" + language + ":" + language_map.get( language ) + ":" );
         UtilShell.executeShellCommandWithOp( "setprop persist.sys.language " + language_map.get( language ) );
     }
 
@@ -160,7 +163,7 @@ public class GetBoxConfigService extends Service {
         setTimeZone( configurationReader.getTimezone() );
 
         // Set Language
-        setLocaleLanguage( configurationReader.getLanguage() );
+        //setLocaleLanguage( configurationReader.getLanguage() );
 
         // Send Broadcast to Enable/Disable Hotspot
         //..

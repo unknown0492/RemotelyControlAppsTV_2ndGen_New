@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="artifacts:ExcelClassLibrary-debug">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/ExcelClassLibrary-debug.aar/dadd19ef72d97b3c469a1f83fba9389a/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/ExcelClassLibrary-debug.aar/dadd19ef72d97b3c469a1f83fba9389a/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

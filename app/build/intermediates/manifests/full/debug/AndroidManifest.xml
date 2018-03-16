@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.excel.remotelycontrolappstv.secondgen"
     android:versionCode="1"
-    android:versionName="1.0.0" >
+    android:versionName="1.1" >
 
     <uses-sdk
         android:minSdkVersion="17"
@@ -16,11 +16,16 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
 
     <application
+        coreApp="true"
         android:allowBackup="true"
+        android:debuggable="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
+        android:sharedUserId="android.uid.system"
         android:supportsRtl="true"
         android:theme="@android:style/Theme.Translucent.NoTitleBar" >
         <activity android:name="com.excel.remotelycontrolappstv.secondgen.MainActivity" >
@@ -44,6 +49,10 @@
                 <action android:name="get_launcher_config" />
                 <action android:name="get_box_configuration" />
                 <action android:name="broadcast_airplay_credentials" />
+                <action android:name="schedule_reboot" />
+                <action android:name="postpone_reboot" />
+                <action android:name="clear_application_cache" />
+                <action android:name="execute_script" />
             </intent-filter>
         </receiver>
 
@@ -55,6 +64,8 @@
         <service android:name="com.excel.remotelycontrolappstv.services.GetBoxConfigService" />
         <service android:name="com.excel.remotelycontrolappstv.services.HotspotStarterService" />
         <service android:name="com.excel.remotelycontrolappstv.services.BroadcastAirplayService" />
+        <service android:name="com.excel.remotelycontrolappstv.services.ScheduleRebootService" />
+        <service android:name="com.excel.remotelycontrolappstv.services.ClearCacheService" />
     </application>
 
 </manifest>

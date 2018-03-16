@@ -79,7 +79,9 @@ public class GetPreinstallAppsInfoService extends Service {
                         pam.writePreinstallAppsFile( jsonObject.getJSONArray( "info" ) );
 
                         // Send Broadcast to DataDownloader to download new preinstall apks from CMS and install them, if their md5 is different
-                        sendBroadcast( new Intent( "download_preinstall_apps" ) );
+                        Intent inn = new Intent( "download_preinstall_apps" );
+                        inn.putExtra( "json", s );
+                        sendBroadcast( inn );
 
                         retryCounter.reset();
                     }

@@ -26,7 +26,9 @@ public class ClearCacheService extends Service {
         Log.d( TAG, "ClearCacheService started" );
 
         // Clear the DownloadManager data
-        UtilShell.executeShellCommandWithOp( "rm /data/data/com.android.providers.downloads/databases/downloads.db" );
+        // Removed because, once this database is deleted, DownloadManager will throw Nullpointerexception
+        //UtilShell.executeShellCommandWithOp( "rm /data/data/com.android.providers.downloads/databases/downloads.db" );
+        deleteDownloadManagerData();
 
         deleteApplicationData( context );
 
@@ -108,5 +110,23 @@ public class ClearCacheService extends Service {
             // create empty package
             UtilShell.executeShellCommandWithOp( "mkdir " + "/data/data/" + package_name );
         }
+    }
+
+    public void deleteDownloadManagerData(){
+        UtilShell.executeShellCommandWithOp( "chmod -R 777 /data/data/com.android.providers.downloads/databases/downloads.db" );
+
+        String size_in_kb = UtilShell.executeShellCommandWithOp( "ls -s /data/data/com.android.providers.downloads/databases/downloads.db" );
+        size_in_kb = size_in_kb.substring( 0, size_in_kb.indexOf( " " ) );
+        size_in_kb = size_in_kb.trim();
+
+        // Delete the downloads.db file if its size is more than 10MB that is 1024*10=10240KB
+        int size = Integer.parseInt( size_in_kb );
+        Log.d( TAG, "Size of DownloadManager data downloads.db file : "+size );
+        if( size >= 10240 ){
+            // Delete the file and reboot
+            UtilShell.executeShellCommandWithOp( "rm /data/data/com.android.providers.downloads/databases/downloads.db" );
+            UtilShell.executeShellCommandWithOp( "reboot" );
+        }
+
     }
 }

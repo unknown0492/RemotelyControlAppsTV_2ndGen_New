@@ -2,13 +2,13 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "24.0.0"
+    buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId "com.excel.remotelycontrolappstv.secondgen"
         minSdkVersion 17
         targetSdkVersion 23
         versionCode 1
-        versionName "1.0.0"
+        versionName "1.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         project.ext.set("archivesBaseName", "0-RemotelyControlAppsTV_2ndGen_v" + defaultConfig.versionName);
     }

@@ -1,7 +1,0 @@
-#Thu Feb 02 23:34:17 IST 2017
-base.0=G\:\\Workspaces\\android_studio\\RemotelyControlAppsTV_2ndGen\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_052ec43a4471b01d437a0e4eea19d7db91589ec3
-renamed.1=classes.dex
-renamed.0=classes2.dex
-file.1=G\:\\Workspaces\\android_studio\\RemotelyControlAppsTV_2ndGen\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_a4702c8b74750735e0e079114a6c55bf41329bb5\\classes.dex
-base.1=G\:\\Workspaces\\android_studio\\RemotelyControlAppsTV_2ndGen\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_a4702c8b74750735e0e079114a6c55bf41329bb5
-file.0=G\:\\Workspaces\\android_studio\\RemotelyControlAppsTV_2ndGen\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_052ec43a4471b01d437a0e4eea19d7db91589ec3\\classes.dex

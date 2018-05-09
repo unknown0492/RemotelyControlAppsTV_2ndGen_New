@@ -81,25 +81,25 @@ public class Receiver extends BroadcastReceiver {
             if( ! isConnectivityBroadcastFired() ) {
 
                 // 2. Start UDP Listening service
-                context.sendBroadcast(new Intent("start_listening_service"));
+                context.sendBroadcast( new Intent( "start_listening_service" ) );
 
                 // 6. Get Box Configuration (appstv_data/configuration)
-                context.sendBroadcast(new Intent("get_box_configuration"));
+                context.sendBroadcast( new Intent( "get_box_configuration" ) );
 
                 // . Clear Application Cache
-                context.sendBroadcast(new Intent("clear_application_cache"));
+                context.sendBroadcast( new Intent( "clear_application_cache" ) );
 
                 // 3. Get Preinstall Apps Information
-                context.sendBroadcast(new Intent("get_preinstall_apps_info"));
+                context.sendBroadcast( new Intent( "get_preinstall_apps_info" ) );
 
                 // 4. Get Launcher Config
-                context.sendBroadcast(new Intent("get_launcher_config"));
+                context.sendBroadcast( new Intent( "get_launcher_config" ) );
 
                 // 5. Download Wallpapers (To be handed under DataDownloader)
-                context.sendBroadcast(new Intent("get_wallpapers"));
+                context.sendBroadcast( new Intent( "get_wallpapers" ) );
 
                 // 7. Schedule Reboot Alarm
-                context.sendBroadcast(new Intent("schedule_reboot"));
+                context.sendBroadcast( new Intent( "schedule_reboot" ) );
 
                 setConnectivityBroadcastFired( true );
             }

@@ -8,8 +8,8 @@
         <option name="gradleHome" value="G:\Programming-Softwares\Android-Studio\gradle\gradle-2.14.1" />
         <option name="modules">
           <set>
+            <option value="$PROJECT_DIR$/../ExcelClassLibrary/app" />
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/ExcelClassLibrary-debug" />
             <option value="$PROJECT_DIR$/app" />
           </set>
         </option>

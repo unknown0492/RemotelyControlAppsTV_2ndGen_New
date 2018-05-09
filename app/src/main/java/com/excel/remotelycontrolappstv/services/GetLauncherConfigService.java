@@ -79,9 +79,14 @@ public class GetLauncherConfigService extends Service {
                         LauncherConfigManager launcherConfigManager = new LauncherConfigManager();
                         launcherConfigManager.writeLauncherConfigFile( launcher_config_json );
 
+                        // Store this data into the database on /mnt/sdcard
+                        storeData();
+
                         // Send broadcast to the Launcher to restart itself
                         context.sendBroadcast( new Intent( "receive_update_launcher_config" ) );
                         //LocalBroadcastManager.getInstance( context ).sendBroadcast( new Intent( "update_launcher_config" ) );
+
+
 
                         Log.i( TAG, launcher_config_json );
 
@@ -99,63 +104,11 @@ public class GetLauncherConfigService extends Service {
 
     }
 
-    /*class GetLauncherConfig extends AsyncTask<String, Void, String> {
+    public void storeData(){
 
-        @Override
-        protected String doInBackground( String... params ) {
 
-            return UtilNetwork.makeRequestForData( UtilURL.getWebserviceURL(), "POST",
-                    UtilURL.getURLParamsFromPairs( new String[][]{
-                            { "what_do_you_want", "get_launcher_config" },
-                            { "mac_address", UtilNetwork.getMacAddress( context ) }
-                    } ));
-        }
 
-        @Override
-        protected void onPostExecute( String s ) {
-            super.onPostExecute( s );
-
-            if( s == null ){
-                Log.d( TAG, "Failed to retrieve Launcher Config" );
-                setRetryTimer();
-                return;
-            }
-
-            Log.d( TAG, "response : "+s );
-            JSONArray jsonArray = null;
-            JSONObject jsonObject = null;
-
-            try{
-                jsonArray = new JSONArray( s );
-                jsonObject = jsonArray.getJSONObject( 0 );
-
-                String type = jsonObject.getString( "type" );
-                if ( type.equals( "error" ) ){
-                    Log.e( TAG, "Failed to retrieve Launcher Config" );
-                    setRetryTimer();
-                    return;
-                }
-                else if( type.equals( "success" ) ){
-                    String launcher_config_json = jsonObject.getString( "info" );
-                    LauncherConfigManager launcherConfigManager = new LauncherConfigManager();
-                    launcherConfigManager.writeLauncherConfigFile( launcher_config_json );
-
-                    // Send broadcast to the Launcher to restart itself
-                     context.sendBroadcast( new Intent( "receive_update_launcher_config" ) );
-                    //LocalBroadcastManager.getInstance( context ).sendBroadcast( new Intent( "update_launcher_config" ) );
-
-                    Log.i( TAG, launcher_config_json );
-
-                    retryCounter.reset();
-                }
-            }
-            catch( Exception e ){
-                e.printStackTrace();
-                setRetryTimer();
-            }
-
-        }
-    }*/
+    }
 
     private void setRetryTimer(){
         final long time = retryCounter.getRetryTime();

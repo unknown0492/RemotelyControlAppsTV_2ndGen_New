@@ -77,21 +77,6 @@
             ]
         },
         {
-            "outputFile": "G:\\Workspaces\\android_studio\\RemotelyControlAppsTV_2ndGen\\app\\build\\intermediates\\res\\merged\\debug\\values-fr-rCA_values-fr-rCA.arsc.flat",
-            "map": [
-                {
-                    "source": "C:\\Users\\Sohail\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.4.0.aar\\55d62cae846ffcf1127056fb3b58d53a\\res\\values-fr-rCA\\values-fr-rCA.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,166,274,397,512,623,710,826,956,1039,1119,1215,1325,1437,1540,1651,1758,1860,1982,2081",
-                        "endColumns": "110,107,122,114,110,86,115,129,82,79,95,109,111,102,110,106,101,121,98,100",
-                        "endOffsets": "161,269,392,507,618,705,821,951,1034,1114,1210,1320,1432,1535,1646,1753,1855,1977,2076,2177"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "G:\\Workspaces\\android_studio\\RemotelyControlAppsTV_2ndGen\\app\\build\\intermediates\\res\\merged\\debug\\values-is-rIS_values-is-rIS.arsc.flat",
             "map": [
                 {
@@ -102,6 +87,21 @@
                         "startOffsets": "55,155,263,386,483,595,680,781,895,975,1055,1136,1246,1354,1452,1561,1660,1763,1881,1979",
                         "endColumns": "99,107,122,96,111,84,100,113,79,79,80,109,107,97,108,98,102,117,97,100",
                         "endOffsets": "150,258,381,478,590,675,776,890,970,1050,1131,1241,1349,1447,1556,1655,1758,1876,1974,2075"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "G:\\Workspaces\\android_studio\\RemotelyControlAppsTV_2ndGen\\app\\build\\intermediates\\res\\merged\\debug\\values-fr-rCA_values-fr-rCA.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\Sohail\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.4.0.aar\\55d62cae846ffcf1127056fb3b58d53a\\res\\values-fr-rCA\\values-fr-rCA.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,166,274,397,512,623,710,826,956,1039,1119,1215,1325,1437,1540,1651,1758,1860,1982,2081",
+                        "endColumns": "110,107,122,114,110,86,115,129,82,79,95,109,111,102,110,106,101,121,98,100",
+                        "endOffsets": "161,269,392,507,618,705,821,951,1034,1114,1210,1320,1432,1535,1646,1753,1855,1977,2076,2177"
                     }
                 }
             ]
@@ -354,21 +354,6 @@
             ]
         },
         {
-            "outputFile": "G:\\Workspaces\\android_studio\\RemotelyControlAppsTV_2ndGen\\app\\build\\intermediates\\res\\merged\\debug\\values-xlarge-land-v4_values-xlarge-land-v4.arsc.flat",
-            "map": [
-                {
-                    "source": "C:\\Users\\Sohail\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.4.0.aar\\55d62cae846ffcf1127056fb3b58d53a\\res\\values-xlarge-land-v4\\values-xlarge-land-v4.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "63",
-                        "endOffsets": "114"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "G:\\Workspaces\\android_studio\\RemotelyControlAppsTV_2ndGen\\app\\build\\intermediates\\res\\merged\\debug\\values-mk-rMK_values-mk-rMK.arsc.flat",
             "map": [
                 {
@@ -379,6 +364,21 @@
                         "startOffsets": "55,163,286,390,498,584,689,808,891,973,1060,1166,1273,1374,1481,1592,1696,1794",
                         "endColumns": "107,122,103,107,85,104,118,82,81,86,105,106,100,106,110,103,97,100",
                         "endOffsets": "158,281,385,493,579,684,803,886,968,1055,1161,1268,1369,1476,1587,1691,1789,1890"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "G:\\Workspaces\\android_studio\\RemotelyControlAppsTV_2ndGen\\app\\build\\intermediates\\res\\merged\\debug\\values-xlarge-land-v4_values-xlarge-land-v4.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\Sohail\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.4.0.aar\\55d62cae846ffcf1127056fb3b58d53a\\res\\values-xlarge-land-v4\\values-xlarge-land-v4.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "63",
+                        "endOffsets": "114"
                     }
                 }
             ]
@@ -520,21 +520,6 @@
             ]
         },
         {
-            "outputFile": "G:\\Workspaces\\android_studio\\RemotelyControlAppsTV_2ndGen\\app\\build\\intermediates\\res\\merged\\debug\\values-it_values-it.arsc.flat",
-            "map": [
-                {
-                    "source": "C:\\Users\\Sohail\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.4.0.aar\\55d62cae846ffcf1127056fb3b58d53a\\res\\values-it\\values-it.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,164,272,395,495,604,688,797,922,999,1075,1156,1262,1370,1468,1572,1677,1784,1906,2006",
-                        "endColumns": "108,107,122,99,108,83,108,124,76,75,80,105,107,97,103,104,106,121,99,100",
-                        "endOffsets": "159,267,390,490,599,683,792,917,994,1070,1151,1257,1365,1463,1567,1672,1779,1901,2001,2102"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "G:\\Workspaces\\android_studio\\RemotelyControlAppsTV_2ndGen\\app\\build\\intermediates\\res\\merged\\debug\\values-sq-rAL_values-sq-rAL.arsc.flat",
             "map": [
                 {
@@ -545,6 +530,21 @@
                         "startOffsets": "55,169,277,400,500,612,699,809,932,1013,1092,1175,1281,1386,1484,1590,1693,1809,1940,2039",
                         "endColumns": "113,107,122,99,111,86,109,122,80,78,82,105,104,97,105,102,115,130,98,100",
                         "endOffsets": "164,272,395,495,607,694,804,927,1008,1087,1170,1276,1381,1479,1585,1688,1804,1935,2034,2135"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "G:\\Workspaces\\android_studio\\RemotelyControlAppsTV_2ndGen\\app\\build\\intermediates\\res\\merged\\debug\\values-it_values-it.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\Sohail\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.4.0.aar\\55d62cae846ffcf1127056fb3b58d53a\\res\\values-it\\values-it.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,164,272,395,495,604,688,797,922,999,1075,1156,1262,1370,1468,1572,1677,1784,1906,2006",
+                        "endColumns": "108,107,122,99,108,83,108,124,76,75,80,105,107,97,103,104,106,121,99,100",
+                        "endOffsets": "159,267,390,490,599,683,792,917,994,1070,1151,1257,1365,1463,1567,1672,1779,1901,2001,2102"
                     }
                 }
             ]

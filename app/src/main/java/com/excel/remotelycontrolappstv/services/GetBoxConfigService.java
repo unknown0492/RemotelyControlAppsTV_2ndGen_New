@@ -174,6 +174,8 @@ public class GetBoxConfigService extends Service {
 
         // Refresh the Launcher Config so that SSID and Password is visible there
         sendBroadcast( new Intent( "receive_update_launcher_config" ) );
+        sendBroadcast( new Intent( "receive_update_hotspot_info" ) );
+
 
         // Send Broadcast to Enable/Disable Airplay (sent inside the HotspotStarterService.class)
         //.. Because, if Airplay is enabled, it should only be started after the Hotspot is enabled

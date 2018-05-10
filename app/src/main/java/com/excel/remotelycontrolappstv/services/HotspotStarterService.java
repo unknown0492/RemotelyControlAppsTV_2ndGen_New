@@ -55,8 +55,9 @@ public class HotspotStarterService extends Service{
 		/*Intent in = new Intent( this, BroadcastAirplayService.class );
 		startService( in );*/
 		sendBroadcast( new Intent( "broadcast_airplay_credentials" ) );
+		sendBroadcast( new Intent( "receive_update_hotspot_info" ) );
 		//if( configurationReader.getAirplayEnabled().equals( "1" ) )
-        //	sendBroadcast( new Intent( "broadcast_airplay_credentials" ) );
+		//	sendBroadcast( new Intent( "broadcast_airplay_credentials" ) );
     	//else{
     	//	Log.e( TAG, "Airplay has been disabled for this box !" );
 		//}

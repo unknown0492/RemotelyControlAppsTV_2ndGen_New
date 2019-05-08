@@ -13,6 +13,7 @@ import com.excel.configuration.ConfigurationWriter;
 import com.excel.customitems.CustomItems;
 import com.excel.excelclasslibrary.RetryCounter;
 import com.excel.excelclasslibrary.UtilArray;
+import com.excel.excelclasslibrary.UtilFile;
 import com.excel.excelclasslibrary.UtilNetwork;
 import com.excel.excelclasslibrary.UtilShell;
 import com.excel.excelclasslibrary.UtilURL;
@@ -102,15 +103,38 @@ public class GetBoxConfigService extends Service {
                     appstv_data.mkdirs();
 
                 if( ! ConfigurationWriter.writeAllConfigurations( context, info ) ){
-                    CustomItems.showCustomToast( context, "error", "OTS was not successful. Contact Technical Team !", 5000 );
+                    //CustomItems.showCustomToast( context, "error", "OTS was not successful. Contact Technical Team !", 5000 );
+                    Log.e( TAG, "OTS was not successful. Contact Technical Team !" );
                     return;
                 }
+
+                configurationReader = ConfigurationReader.getInstance();
+                File configuration = configurationReader.getConfigurationFile( false );
+                if( configuration.exists() ) {
+                    String data = UtilFile.readData(configuration);
+                    data = data.trim();
+                    if ( data.length() != 0 ) {
+                        // Make a backup copy of configuration file
+                        File configuration_backup = new File( configurationReader.getConfigurationFile( false ).getAbsolutePath() + ".backup" );
+                        try {
+                            configuration_backup.createNewFile();
+                            UtilFile.saveDataToFile( configuration_backup, UtilFile.readData( configurationReader.getConfigurationFile( false ) ) );
+                        }
+                        catch ( Exception e ){
+                            e.printStackTrace();
+                        }
+                    }
+                    else{
+                        Log.e( TAG, "Backup of configuration file not made because it is empty !" );
+                    }
+                }
+
+
 
                 initLanguages();
                 //configurationReader = ConfigurationReader.reInstantiate();
 
                 processDownloadedValues();
-
 
                 // UtilShell.executeShellCommandWithOp( "am force-stop com.excel.appstvlauncher.secondgen" );
                 // UtilShell.executeShellCommandWithOp( "monkey -p com.excel.appstvlauncher.secondgen -c android.intent.category.LAUNCHER 1" );
@@ -174,7 +198,7 @@ public class GetBoxConfigService extends Service {
 
         // Refresh the Launcher Config so that SSID and Password is visible there
         sendBroadcast( new Intent( "receive_update_launcher_config" ) );
-        sendBroadcast( new Intent( "receive_update_hotspot_info" ) );
+        //sendBroadcast( new Intent( "receive_update_hotspot_info" ) );
 
 
         // Send Broadcast to Enable/Disable Airplay (sent inside the HotspotStarterService.class)

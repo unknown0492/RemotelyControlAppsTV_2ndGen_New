@@ -151,6 +151,9 @@ public class ListeningService extends Service {
 			else if( _for.equals( "reboot_recovery" ) ){
 				UtilShell.executeShellCommandWithOp( "reboot recovery" );
 			}
+			else if( _for.equals( "update_box_active_status" ) ){
+				context.sendBroadcast( new Intent( "update_box_active_status" ) );
+			}
 			else if( _for.equals( "execute_script" ) ){
 				Intent inn = new Intent( "execute_script" );
 				String scripts[] = null;

@@ -54,6 +54,9 @@ public class BroadcastAirplayService extends Service {
                     password = "";
 			}
 
+			//disableAirplay();
+			//disableDLNA();
+
 			updateAirplay();
 			updateDLNA();
 			updateCredentials( nickname, password );
@@ -74,7 +77,8 @@ public class BroadcastAirplayService extends Service {
 		in.putExtra( "accessid", "PRJ:AirPlayer|ID:760ba1810b647cb0" );
 		in.putExtra( "option", 1 );
 		in.putExtra( "audioen", 1 );
-		in.putExtra( "bindif", "wlan0" );
+		// in.putExtra( "bindif", "wlan0" );
+		in.putExtra( "bindif", "eth1" );
 		sendBroadcast( in );
 	}
 	
@@ -84,7 +88,8 @@ public class BroadcastAirplayService extends Service {
 		in.putExtra( "accessid", "PRJ:AirPlayer|ID:760ba1810b647cb0" );
 		in.putExtra( "option", 1 );
 		in.putExtra( "audioen", 1 );
-		in.putExtra( "bindif", "wlan0" );
+		// in.putExtra( "bindif", "wlan0" );
+		in.putExtra( "bindif", "eth1" );
 		sendBroadcast( in );
 	}
 	

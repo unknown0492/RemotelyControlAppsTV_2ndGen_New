@@ -63,6 +63,8 @@ public class UpdateBoxBootStatusService extends Service{
                 retryCounter.reset();
 
                 Log.d( TAG, "response : "+result );
+                context.sendBroadcast( new Intent( "get_box_configuration" ) );
+
             }
         }).start();
     }

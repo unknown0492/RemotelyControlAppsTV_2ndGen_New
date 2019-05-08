@@ -39,7 +39,6 @@ public class MainActivity extends Activity {
 
         spfs = (SharedPreferences) UtilSharedPreferences.createSharedPreference( this, Constants.PERMISSION_SPFS );
 
-
         if ( Build.VERSION.SDK_INT >= Build.VERSION_CODES.M ) {
             if ( checkPermissions() ) {
                 // permissions  granted.
@@ -50,8 +49,6 @@ public class MainActivity extends Activity {
         else{
             finish();
         }
-
-
     }
 
     @Override

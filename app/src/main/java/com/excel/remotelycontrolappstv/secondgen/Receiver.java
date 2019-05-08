@@ -19,6 +19,7 @@ import com.excel.remotelycontrolappstv.services.ScheduleRebootService;
 import com.excel.remotelycontrolappstv.services.UpdateBoxActiveStatusService;
 import com.excel.remotelycontrolappstv.services.UpdateBoxBootStatusService;
 
+import static com.excel.remotelycontrolappstv.util.Constants.IS_BOX_BOOTUP_TIME_UPDATED;
 import static com.excel.remotelycontrolappstv.util.Constants.IS_PERMISSION_GRANTED;
 import static com.excel.remotelycontrolappstv.util.Constants.PERMISSION_GRANTED_NO;
 import static com.excel.remotelycontrolappstv.util.Constants.PERMISSION_SPFS;
@@ -33,6 +34,8 @@ public class Receiver extends BroadcastReceiver {
     public void onReceive( Context context, Intent intent ) {
         String action = intent.getAction();
         Log.d( TAG, "action : " + action );
+
+        // Receiver sw = (SystemWriteManager) Receiver.this.context.getSystemService("system_write");
 
         /*MainActivity ma = new MainActivity();
 
@@ -84,7 +87,7 @@ public class Receiver extends BroadcastReceiver {
                 context.sendBroadcast( new Intent( "start_listening_service" ) );
 
                 // 6. Get Box Configuration (appstv_data/configuration)
-                context.sendBroadcast( new Intent( "get_box_configuration" ) );
+                // context.sendBroadcast( new Intent( "get_box_configuration" ) );  // Commented this because, after box bootuptime broadcast, it will send this broadcast inside the service
 
                 // . Clear Application Cache
                 context.sendBroadcast( new Intent( "clear_application_cache" ) );
@@ -115,6 +118,7 @@ public class Receiver extends BroadcastReceiver {
             updateBoxBootUpTime( context );
         }
         else if( action.equals( "update_box_active_status" ) ){
+            //context.sendBroadcast( new Intent( "update_box_bootup_time" ) );
             updateBoxActiveStatus( context );
         }
         else if( action.equals( "get_preinstall_apps_info" ) ){
@@ -156,8 +160,12 @@ public class Receiver extends BroadcastReceiver {
     }
 
     private void updateBoxBootUpTime( Context context ){
-        Intent in = new Intent( context, UpdateBoxBootStatusService.class );
-        context.startService( in );
+
+        if( ! isBoxBootupTimeUpdated() ) {
+            Log.i( TAG, "Updating Box Bootup Time" );
+            Intent in = new Intent(context, UpdateBoxBootStatusService.class);
+            context.startService(in);
+        }
     }
 
     private void updateBoxActiveStatus( Context context ){
@@ -213,5 +221,17 @@ public class Receiver extends BroadcastReceiver {
             Log.d( TAG, "Executing script " + scripts[ i ] );
             UtilShell.executeShellCommandWithOp( scripts[ i ] );
         }
+    }
+
+
+    public static void setBoxBootupTimeUpdated( boolean is_it ){
+        String s = (is_it)?"1":"0";
+        Log.d( TAG, "setBoxBootupTimeUpdated() : " + s );
+        UtilShell.executeShellCommandWithOp( "setprop " + IS_BOX_BOOTUP_TIME_UPDATED + " " + s );
+    }
+
+    public static boolean isBoxBootupTimeUpdated(){
+        String is_it = UtilShell.executeShellCommandWithOp( "getprop "+IS_BOX_BOOTUP_TIME_UPDATED ).trim();
+        return ( is_it.equals( "0" ) || is_it.equals( "" ) )?false:true;
     }
 }

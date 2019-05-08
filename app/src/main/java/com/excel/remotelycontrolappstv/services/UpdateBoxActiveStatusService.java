@@ -42,7 +42,7 @@ public class UpdateBoxActiveStatusService extends Service{
 
         updateTime();
 
-        return START_STICKY;
+        return START_NOT_STICKY;
     }
 
     private void updateTime(){
@@ -62,6 +62,9 @@ public class UpdateBoxActiveStatusService extends Service{
                 }
 
                 Log.d( TAG, "response : "+s );
+
+                //Receiver.setBoxBootupTimeUpdated( true );
+
             }
         }).start();
     }

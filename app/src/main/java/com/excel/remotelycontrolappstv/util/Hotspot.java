@@ -1,6 +1,7 @@
 package com.excel.remotelycontrolappstv.util;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.wifi.WifiConfiguration;
 import android.net.wifi.WifiManager;
 import android.os.Handler;
@@ -26,7 +27,7 @@ public class Hotspot {
      * @param context
      * @param isTurnToOn
      */
-    public static void turnOnOffHotspot( Context context, boolean isTurnToOn ) {
+    public static void turnOnOffHotspot(final Context context, boolean isTurnToOn ) {
         WifiManager wifiManager = (WifiManager) context.getSystemService( Context.WIFI_SERVICE );
         final WifiApControl apControl = WifiApControl.getApControl( wifiManager );
 
@@ -129,6 +130,17 @@ public class Hotspot {
                     setProperty( HOTSPOT_SDMC_BRIDGE_KEY, "1" );
                     apControl.setWifiApEnabled(wifi_config, true);
                 }
+
+                // Send a broadcast to update the box active status, it will update the new IP of the box into the CMS
+                new Handler().postDelayed(new Runnable() {
+
+                    @Override
+                    public void run() {
+                        Log.d( TAG, "Running after 10 secs, update box active status" );
+                        context.sendBroadcast( new Intent( "update_box_active_status" ) );
+                    }
+
+                }, 10000 );
             }
 
         }

@@ -21,12 +21,13 @@ android {
             keyPassword props['keyPassword']
         }
     }
+
     defaultConfig {
         applicationId "com.excel.remotelycontrolappstv.secondgen"
         minSdkVersion 17
         targetSdkVersion 28
         versionCode 1
-        versionName "3.0.0"
+        versionName "3.0.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         project.ext.set("archivesBaseName", "0-RemotelyControlAppsTV_2ndGen_v" + defaultConfig.versionName);
         signingConfig signingConfigs.release
@@ -41,7 +42,6 @@ android {
             signingConfig signingConfigs.release
             debuggable true
         }
-
     }
     productFlavors {
     }

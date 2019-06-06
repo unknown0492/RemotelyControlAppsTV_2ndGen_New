@@ -49,9 +49,11 @@ public class UpdateBoxActiveStatusService extends Service{
         new Thread(new Runnable() {
             @Override
             public void run() {
+                Log.d( TAG, "Updating box active status with IP : " + UtilNetwork.getLocalIpAddressIPv4( context ) );
                 String s = UtilNetwork.makeRequestForData( UtilURL.getWebserviceURL(), "POST",
                         UtilURL.getURLParamsFromPairs( new String[][]{
                                 { "mac_address", UtilNetwork.getMacAddress( context ) },
+                                { "ip", UtilNetwork.getLocalIpAddressIPv4( context ) },
                                 { "what_do_you_want", "update_box_active_status" }
                         } ));
 

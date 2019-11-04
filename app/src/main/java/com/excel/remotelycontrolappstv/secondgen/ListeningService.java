@@ -173,10 +173,10 @@ public class ListeningService extends Service {
 			else if( _for.equals( "show_welcome_screen" ) ){
 				UtilShell.executeShellCommandWithOp( "monkey -p com.excel.welcomeguestapp.secondgen -c android.intent.category.LAUNCHER 1" );
 			}
+			else if( _for.equals( "release_cc" ) ){
+				context.sendBroadcast( new Intent( "release_cc" ) );
+			}
 
-
-			
-			
 			Log.i( TAG, "processMessage() completed" );
 		}
 		catch( Exception e ){

@@ -2,8 +2,10 @@ package com.excel.remotelycontrolappstv.util;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.net.wifi.WifiConfiguration;
 import android.net.wifi.WifiManager;
+import android.os.Build;
 import android.os.Handler;
 import android.util.Log;
 
@@ -18,6 +20,7 @@ public class Hotspot {
 	final static String DEFAULT_SSID 	 = "AndroidAP";
 	final static String DEFAULT_PASSWORD = "123456789";
 	final static String TAG 			 = "Hotspot";
+    //static WifiConfiguration wifi_config;
 
 	final static String HOTSPOT_SDMC_BRIDGE_KEY = "persist.sdmc.tether.running";
 
@@ -30,7 +33,9 @@ public class Hotspot {
     public static void turnOnOffHotspot(final Context context, boolean isTurnToOn ) {
         WifiManager wifiManager = (WifiManager) context.getSystemService( Context.WIFI_SERVICE );
         final WifiApControl apControl = WifiApControl.getApControl( wifiManager );
+        final WifiConfiguration wifi_config = new WifiConfiguration();//apControl.getWifiApConfiguration();
 
+        //Log.i( TAG, "without WPA" );
         // Check if Chromecast Mode is ON/OFF from the config file
         ConfigurationReader configurationReader = ConfigurationReader.reInstantiate();
 
@@ -51,9 +56,18 @@ public class Hotspot {
             if( ssid.equals( "-" ) ) ssid = DEFAULT_SSID;
             if( hotspot_password.equals( "-" ) ) hotspot_password = DEFAULT_PASSWORD;
 
-            final WifiConfiguration wifi_config = apControl.getWifiApConfiguration();
             wifi_config.SSID = ssid;
-            wifi_config.preSharedKey = hotspot_password;
+            wifiManager.setWifiEnabled( false );
+            if( configurationReader.getHotspotSecurity().equals( "none" ) ){
+                Log.i( TAG, "inside none" );
+                wifi_config.allowedAuthAlgorithms.set( WifiConfiguration.AuthAlgorithm.OPEN );
+            }
+            else{
+                Log.i( TAG, "inside wpa" );
+                wifi_config.preSharedKey = hotspot_password;
+                wifi_config.allowedKeyManagement.set( WifiConfiguration.KeyMgmt.WPA_PSK );
+            }
+
 
             /*
             * Case - 1 : Hotspot already ON on the box, but another request comes from CMS to Turn ON the Hotspot --> Change of SSID/Password
@@ -73,6 +87,7 @@ public class Hotspot {
                     new Handler().postDelayed(new Runnable() {
 
                         @Override
+
                         public void run() {
                             apControl.setWifiApEnabled(wifi_config, true);
                         }

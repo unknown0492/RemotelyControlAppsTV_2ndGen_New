@@ -2,8 +2,10 @@ package com.excel.remotelycontrolappstv.secondgen;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -39,7 +41,12 @@ public class MainActivity extends Activity {
         setContentView( R.layout.activity_main );
 
         spfs = (SharedPreferences) UtilSharedPreferences.createSharedPreference( this, Constants.PERMISSION_SPFS );
-
+        /*if (Build.VERSION.SDK_INT >= 23 ) {
+            StringBuilder sb = new StringBuilder();
+            sb.append("package:");
+            sb.append(getPackageName());
+            startActivityForResult(new Intent("android.settings.action.MANAGE_WRITE_SETTINGS"), 1 );
+        }*/
         if ( Build.VERSION.SDK_INT >= Build.VERSION_CODES.M ) {
             if ( checkPermissions() ) {
                 // permissions  granted.

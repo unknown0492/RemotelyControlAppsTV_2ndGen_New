@@ -2,10 +2,12 @@ package com.excel.remotelycontrolappstv.secondgen;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,6 +16,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.excel.excelclasslibrary.UtilSharedPreferences;
+import com.excel.remotelycontrolappstv.receivers.ConnectivityChangeReceiver;
 import com.excel.remotelycontrolappstv.util.Constants;
 
 import java.util.ArrayList;
@@ -35,10 +38,16 @@ public class MainActivity extends Activity {
 
     SharedPreferences spfs;
 
+    BroadcastReceiver myBroadcastReceiver;// = new MyBroadcastReceiver();
+
+    BroadcastReceiver receiver;
+
     @Override
     protected void onCreate( Bundle savedInstanceState ) {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_main );
+
+        registerAllBroadcasts();
 
         spfs = (SharedPreferences) UtilSharedPreferences.createSharedPreference( this, Constants.PERMISSION_SPFS );
         /*if (Build.VERSION.SDK_INT >= 23 ) {
@@ -57,6 +66,22 @@ public class MainActivity extends Activity {
         else{
             finish();
         }
+    }
+
+    private void registerAllBroadcasts(){
+        receiver = new Receiver();
+
+        IntentFilter intentFilter = new IntentFilter( "connectivity_change" );
+        registerReceiver( receiver, intentFilter );
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        unregisterReceiver( receiver );
+
     }
 
     @Override

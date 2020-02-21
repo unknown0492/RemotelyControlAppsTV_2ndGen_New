@@ -69,7 +69,7 @@ public class Receiver extends BroadcastReceiver {
 
         configurationReader = ConfigurationReader.reInstantiate();
 
-        if( action.equals( "android.net.conn.CONNECTIVITY_CHANGE" ) || action.equals( "connectivity_changed" ) ){
+        if( action.equals( "android.net.conn.CONNECTIVITY_CHANGE" ) ){
 
             // 1. First time in order to receive broadcasts, the app should be started at least once
             startRemotelyControlAppsTV( context );

@@ -11,20 +11,37 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_SETTINGS"
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
         tools:ignore="ProtectedPermissions" />
-    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS"
+    <uses-permission
+        android:name="android.permission.WRITE_SECURE_SETTINGS"
         tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.TETHER_PRIVILEGED" />
-
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        tools:replace="android:theme"
-        android:theme="@android:style/Theme.Translucent.NoTitleBar">
+        android:theme="@android:style/Theme.Translucent.NoTitleBar"
+        tools:replace="android:theme">
+        <receiver
+            android:name="com.excel.remotelycontrolappstv.receivers.ConnectivityChangeReceiver"
+            android:enabled="true"
+            android:exported="true"></receiver>
+
+        <receiver
+            android:name=".MyBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="connectivity_change" />
+                <action android:name="test_test" />
+            </intent-filter>
+        </receiver>
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -38,7 +55,6 @@
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="boot_completed" />
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-                <action android:name="connectivity_changed" />
                 <action android:name="start_listening_service" />
                 <action android:name="update_box_bootup_time" />
                 <action android:name="update_box_active_status" />
@@ -50,6 +66,7 @@
                 <action android:name="postpone_reboot" />
                 <action android:name="clear_application_cache" />
                 <action android:name="execute_script" />
+                <action android:name="MY_ACTION" />
             </intent-filter>
         </receiver>
 

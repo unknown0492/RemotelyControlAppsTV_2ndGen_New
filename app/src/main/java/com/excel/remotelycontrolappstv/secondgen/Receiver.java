@@ -6,8 +6,10 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.excel.configuration.ConfigurationReader;
+import com.excel.excelclasslibrary.UtilMisc;
 import com.excel.excelclasslibrary.UtilSharedPreferences;
 import com.excel.excelclasslibrary.UtilShell;
 import com.excel.remotelycontrolappstv.services.BroadcastAirplayService;
@@ -33,7 +35,7 @@ public class Receiver extends BroadcastReceiver {
     @Override
     public void onReceive( Context context, Intent intent ) {
         String action = intent.getAction();
-        Log.d( TAG, "action : " + action );
+        Log.d( TAG, "actionR : " + action );
 
         // Receiver sw = (SystemWriteManager) Receiver.this.context.getSystemService("system_write");
 
@@ -68,8 +70,10 @@ public class Receiver extends BroadcastReceiver {
 
 
         configurationReader = ConfigurationReader.reInstantiate();
+        Toast.makeText( context, intent.getAction(), Toast.LENGTH_SHORT ).show();
 
-        if( action.equals( "android.net.conn.CONNECTIVITY_CHANGE" ) ){
+        //if( action.equals( "android.net.conn.CONNECTIVITY_CHANGE" ) ){ // Doesnt work anymore because it is deprecated in Android 7.0+
+        if( action.equals( "connectivity_change" ) ){
 
             // 1. First time in order to receive broadcasts, the app should be started at least once
             startRemotelyControlAppsTV( context );
@@ -84,32 +88,47 @@ public class Receiver extends BroadcastReceiver {
             if( ! isConnectivityBroadcastFired() ) {
 
                 // 2. Start UDP Listening service
-                context.sendBroadcast( new Intent( "start_listening_service" ) );
+                UtilMisc.sendExplicitInternalBroadcast( context, "start_listening_service", Receiver.class );
 
                 // 6. Get Box Configuration (appstv_data/configuration)
                 // context.sendBroadcast( new Intent( "get_box_configuration" ) );  // Commented this because, after box bootuptime broadcast, it will send this broadcast inside the service
 
                 // . Clear Application Cache
-                context.sendBroadcast( new Intent( "clear_application_cache" ) );
+                /*Intent in2 = new Intent( context, Receiver.class );
+                in2.setAction( "clear_application_cache" );
+                context.sendBroadcast( in2 );*/
+                UtilMisc.sendExplicitInternalBroadcast( context, "clear_application_cache", Receiver.class );
 
                 // 3. Get Preinstall Apps Information
-                context.sendBroadcast( new Intent( "get_preinstall_apps_info" ) );
+                /*Intent in3 = new Intent( context, Receiver.class );
+                in3.setAction( "get_preinstall_apps_info" );
+                context.sendBroadcast( in3 );*/
+                UtilMisc.sendExplicitInternalBroadcast( context, "get_preinstall_apps_info", Receiver.class );
 
                 // 4. Get Launcher Config
-                context.sendBroadcast( new Intent( "get_launcher_config" ) );
+                /*Intent in4 = new Intent( context, Receiver.class );
+                in4.setAction( "get_launcher_config" );
+                context.sendBroadcast( in4 );*/
+                UtilMisc.sendExplicitInternalBroadcast( context, "get_launcher_config", Receiver.class );
 
                 // 5. Download Wallpapers (To be handed under DataDownloader)
-                context.sendBroadcast( new Intent( "get_wallpapers" ) );
+                /*Intent in5 = new Intent( context, Receiver.class );
+                in5.setAction( "get_wallpapers" );
+                context.sendBroadcast( in5 );*/
+                UtilMisc.sendExplicitInternalBroadcast( context, "get_wallpapers", Receiver.class );
 
                 // 7. Schedule Reboot Alarm
-                context.sendBroadcast( new Intent( "schedule_reboot" ) );
+                /*Intent in6 = new Intent( context, Receiver.class );
+                in6.setAction( "schedule_reboot" );
+                context.sendBroadcast( in6 );*/
+                UtilMisc.sendExplicitInternalBroadcast( context, "schedule_reboot", Receiver.class );
 
                 setConnectivityBroadcastFired( true );
             }
-
         }
         else if( action.equals( "android.intent.action.BOOT_COMPLETED" ) || action.equals( "boot_completed" ) ){
-            context.sendBroadcast( new Intent( "update_box_bootup_time" ) );
+            // context.sendBroadcast( new Intent( "update_box_bootup_time" ) );
+            UtilMisc.sendExplicitInternalBroadcast( context, "update_box_bootup_time", Receiver.class );
         }
         else if( action.equals( "start_listening_service" ) ){
             startListeningService( context );
@@ -146,6 +165,8 @@ public class Receiver extends BroadcastReceiver {
             executePushedScripts( context, intent );
         }
     }
+
+
 
     private void startRemotelyControlAppsTV( Context context ){
         // Start this app activity

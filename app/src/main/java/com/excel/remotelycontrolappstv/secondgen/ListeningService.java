@@ -7,6 +7,7 @@ import android.os.AsyncTask;
 import android.os.IBinder;
 import android.util.Log;
 
+import com.excel.excelclasslibrary.UtilMisc;
 import com.excel.excelclasslibrary.UtilShell;
 
 import org.json.JSONArray;
@@ -14,6 +15,11 @@ import org.json.JSONObject;
 
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
+
+import static com.excel.remotelycontrolappstv.util.Constants.CHROMECAST_STREAMING_PACKAGE_NAME;
+import static com.excel.remotelycontrolappstv.util.Constants.CHROMECAST_STREAMING_RECEIVER_NAME;
+import static com.excel.remotelycontrolappstv.util.Constants.DATADOWNLOADER_PACKAGE_NAME;
+import static com.excel.remotelycontrolappstv.util.Constants.DATADOWNLOADER_RECEIVER_NAME;
 
 public class ListeningService extends Service {
 	
@@ -84,66 +90,50 @@ public class ListeningService extends Service {
 			String _for = jsonObject.getString( "for" );
 			Log.i( TAG, "_for : "+_for );
 			
-			/*if( _for.equals( "manipulate_hotspot_info" ) ){
-				jsonObject = jsonArray.getJSONObject( 0 );
-				String ssid 	= jsonObject.getString( "ssid" );
-				String password = jsonObject.getString( "password" );
-				String enabled	= jsonObject.getString( "enabled" );
-				String airplay_enabled = jsonObject.getString( "airplay_enabled" );
-				
-				// This is for Airplay enable/disable info saving
-				Functions.saveFile( "OTS", "airplay_enabled", "txt", airplay_enabled.trim().getBytes() );
-				
-				if( enabled.equals( "1" ) ){
-					// Store the Credentials of the Hotspot on the box, then trigger the hotspot ON
-					String csv_data = String.format( "%s,%s", ssid, password );
-					Functions.saveFile( "OTS", "hotspot", "txt", csv_data.getBytes() );
-					
-					context.sendBroadcast( new Intent( "turn_on_hotspot" ) );
-					Log.i( TAG, "Broadcast Sent" );
-				}
-				else if( enabled.equals( "0" ) ){
-					// Store the Credentials of the Hotspot on the box, then trigger the hotspot OFF
-					String csv_data = String.format( "%s,%s", ssid, password );
-					Functions.saveFile( "OTS", "hotspot", "txt", csv_data.getBytes() );
-					
-					context.sendBroadcast( new Intent( "turn_off_hotspot" ) );
-					Log.i( TAG, "Broadcast Sent" );
-				}
-			}
-			else */
+
 			if( _for.equals( "start_restore_service" ) ){
-				context.sendBroadcast( new Intent( "start_restore_service" ) );
+				// context.sendBroadcast( new Intent( "start_restore_service" ) );		// Defined inside DataDownloader
+				UtilMisc.sendExplicitExternalBroadcast( context, "start_restore_service", DATADOWNLOADER_PACKAGE_NAME, DATADOWNLOADER_RECEIVER_NAME  );
 			}
 			else if( _for.equals( "push_launcher_menu_items" ) ){
-				context.sendBroadcast( new Intent( "get_launcher_config" ) );
+				// context.sendBroadcast( new Intent( "get_launcher_config" ) );
+				UtilMisc.sendExplicitInternalBroadcast( context, "get_launcher_config", Receiver.class );
 			}
-			else if( _for.equals( "push_digital_signage" ) ){
-				context.sendBroadcast( new Intent( "get_wallpapers" ) );
+			else if( _for.equals( "push_digital_signage" ) ){								// Defined inside DataDownloader
+				// context.sendBroadcast( new Intent( "get_wallpapers" ) );
+				UtilMisc.sendExplicitExternalBroadcast( context, "get_wallpapers", DATADOWNLOADER_PACKAGE_NAME, DATADOWNLOADER_RECEIVER_NAME  );
 			}
 			else if( _for.equals( "push_preinstall_apps" ) ){
-				context.sendBroadcast( new Intent( "get_preinstall_apps_info" ) );
+				// context.sendBroadcast( new Intent( "get_preinstall_apps_info" ) );
+				UtilMisc.sendExplicitInternalBroadcast( context, "get_preinstall_apps_info", Receiver.class );
 			}
 			else if( _for.equals( "push_ticker_text" ) ){
-				context.sendBroadcast( new Intent( "get_launcher_config" ) );
+				// context.sendBroadcast( new Intent( "get_launcher_config" ) );
+				UtilMisc.sendExplicitInternalBroadcast( context, "get_launcher_config", Receiver.class );
 			}
-			else if( _for.equals( "push_hotel_logo" ) ){
-				context.sendBroadcast( new Intent( "get_hotel_logo" ) );
+			else if( _for.equals( "push_hotel_logo" ) ){									// Defined inside DataDownloader
+				// context.sendBroadcast( new Intent( "get_hotel_logo" ) );
+				UtilMisc.sendExplicitExternalBroadcast( context, "get_hotel_logo", DATADOWNLOADER_PACKAGE_NAME, DATADOWNLOADER_RECEIVER_NAME  );
 			}
-			else if( _for.equals( "push_dvb_tv_channels" ) ){
-				context.sendBroadcast( new Intent( "get_tv_channels_file" ) );
+			else if( _for.equals( "push_dvb_tv_channels" ) ){								// Defined inside DataDownloader
+				// context.sendBroadcast( new Intent( "get_tv_channels_file" ) );
+				UtilMisc.sendExplicitExternalBroadcast( context, "get_tv_channels_file", DATADOWNLOADER_PACKAGE_NAME, DATADOWNLOADER_RECEIVER_NAME  );
 			}
 			else if( _for.equals( "push_appstv_common_settings" ) ){
-				context.sendBroadcast( new Intent( "get_box_configuration" ) );
+				//context.sendBroadcast( new Intent( "get_box_configuration" ) );
+				UtilMisc.sendExplicitInternalBroadcast( context, "get_box_configuration", Receiver.class );
 			}
 			else if( _for.equals( "push_hotspot" ) ){
-				context.sendBroadcast( new Intent( "get_box_configuration" ) );
+				// context.sendBroadcast( new Intent( "get_box_configuration" ) );
+				UtilMisc.sendExplicitInternalBroadcast( context, "get_box_configuration", Receiver.class );
 			}
-			else if( _for.equals( "push_ota" ) ){
-				context.sendBroadcast( new Intent( "get_ota_info" ) );
+			else if( _for.equals( "push_ota" ) ){											// Defined inside DataDownloader
+				// context.sendBroadcast( new Intent( "get_ota_info" ) );
+				UtilMisc.sendExplicitExternalBroadcast( context, "get_ota_info", DATADOWNLOADER_PACKAGE_NAME, DATADOWNLOADER_RECEIVER_NAME  );
 			}
 			else if( _for.equals( "clear_cache" ) ){
-				context.sendBroadcast( new Intent( "clear_application_cache" ) );
+				// context.sendBroadcast( new Intent( "clear_application_cache" ) );
+				UtilMisc.sendExplicitInternalBroadcast( context, "clear_application_cache", Receiver.class );
 			}
 			else if( _for.equals( "reboot" ) ){
 				UtilShell.executeShellCommandWithOp( "reboot" );
@@ -152,10 +142,11 @@ public class ListeningService extends Service {
 				UtilShell.executeShellCommandWithOp( "reboot recovery" );
 			}
 			else if( _for.equals( "update_box_active_status" ) ){
-				context.sendBroadcast( new Intent( "update_box_active_status" ) );
+				// context.sendBroadcast( new Intent( "update_box_active_status" ) );
+				UtilMisc.sendExplicitInternalBroadcast( context, "update_box_active_status", Receiver.class );
 			}
 			else if( _for.equals( "execute_script" ) ){
-				Intent inn = new Intent( "execute_script" );
+				Intent inn = new Intent();
 				String scripts[] = null;
 				try{
 					JSONArray jsa = jsonObject.getJSONArray( "info" );
@@ -168,13 +159,14 @@ public class ListeningService extends Service {
 					e.printStackTrace();
 				}
 				inn.putExtra( "scripts", scripts );
-				context.sendBroadcast( inn );
+				UtilMisc.sendExplicitInternalBroadcast( context, inn, "execute_script", Receiver.class );
 			}
 			else if( _for.equals( "show_welcome_screen" ) ){
 				UtilShell.executeShellCommandWithOp( "monkey -p com.excel.welcomeguestapp.secondgen -c android.intent.category.LAUNCHER 1" );
 			}
 			else if( _for.equals( "release_cc" ) ){
-				context.sendBroadcast( new Intent( "release_cc" ) );
+				// context.sendBroadcast( new Intent( "release_cc" ) );					// Defined inside ChromecastStreaming
+				UtilMisc.sendExplicitExternalBroadcast( context, "release_cc", CHROMECAST_STREAMING_PACKAGE_NAME, CHROMECAST_STREAMING_RECEIVER_NAME  );
 			}
 
 			Log.i( TAG, "processMessage() completed" );

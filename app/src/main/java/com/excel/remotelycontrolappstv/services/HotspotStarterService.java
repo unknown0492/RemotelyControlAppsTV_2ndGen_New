@@ -7,7 +7,12 @@ import android.os.IBinder;
 import android.util.Log;
 
 import com.excel.configuration.ConfigurationReader;
+import com.excel.excelclasslibrary.UtilMisc;
+import com.excel.remotelycontrolappstv.secondgen.Receiver;
 import com.excel.remotelycontrolappstv.util.Hotspot;
+
+import static com.excel.remotelycontrolappstv.util.Constants.APPSTVLAUNCHER_PACKAGE_NAME;
+import static com.excel.remotelycontrolappstv.util.Constants.APPSTVLAUNCHER_RECEIVER_NAME;
 
 public class HotspotStarterService extends Service{
     Context context = this;
@@ -54,8 +59,12 @@ public class HotspotStarterService extends Service{
 
 		/*Intent in = new Intent( this, BroadcastAirplayService.class );
 		startService( in );*/
-		sendBroadcast( new Intent( "broadcast_airplay_credentials" ) );
-		sendBroadcast( new Intent( "receive_update_hotspot_info" ) );
+		//sendBroadcast( new Intent( "broadcast_airplay_credentials" ) );
+		UtilMisc.sendExplicitInternalBroadcast( context, "broadcast_airplay_credentials", Receiver.class );
+
+		// sendBroadcast( new Intent( "receive_update_hotspot_info" ) );
+		UtilMisc.sendExplicitExternalBroadcast( context, "receive_update_hotspot_info", APPSTVLAUNCHER_PACKAGE_NAME, APPSTVLAUNCHER_RECEIVER_NAME );
+
 		//if( configurationReader.getAirplayEnabled().equals( "1" ) )
 		//	sendBroadcast( new Intent( "broadcast_airplay_credentials" ) );
     	//else{

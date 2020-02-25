@@ -10,11 +10,15 @@ import android.util.Log;
 
 import com.excel.configuration.LauncherConfigManager;
 import com.excel.excelclasslibrary.RetryCounter;
+import com.excel.excelclasslibrary.UtilMisc;
 import com.excel.excelclasslibrary.UtilNetwork;
 import com.excel.excelclasslibrary.UtilURL;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+
+import static com.excel.remotelycontrolappstv.util.Constants.APPSTVLAUNCHER_PACKAGE_NAME;
+import static com.excel.remotelycontrolappstv.util.Constants.APPSTVLAUNCHER_RECEIVER_NAME;
 
 /**
  * Created by Sohail on 02-11-2016.
@@ -83,7 +87,8 @@ public class GetLauncherConfigService extends Service {
                         storeData();
 
                         // Send broadcast to the Launcher to restart itself
-                        context.sendBroadcast( new Intent( "receive_update_launcher_config" ) );
+                        // context.sendBroadcast( new Intent( "receive_update_launcher_config" ) );
+                        UtilMisc.sendExplicitExternalBroadcast( context, "receive_update_launcher_config", APPSTVLAUNCHER_PACKAGE_NAME, APPSTVLAUNCHER_RECEIVER_NAME );
                         //LocalBroadcastManager.getInstance( context ).sendBroadcast( new Intent( "update_launcher_config" ) );
 
 

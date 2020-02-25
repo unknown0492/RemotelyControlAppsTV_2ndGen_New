@@ -14,6 +14,7 @@ import com.excel.customitems.CustomItems;
 import com.excel.excelclasslibrary.RetryCounter;
 import com.excel.excelclasslibrary.UtilArray;
 import com.excel.excelclasslibrary.UtilFile;
+import com.excel.excelclasslibrary.UtilMisc;
 import com.excel.excelclasslibrary.UtilNetwork;
 import com.excel.excelclasslibrary.UtilShell;
 import com.excel.excelclasslibrary.UtilURL;
@@ -24,6 +25,9 @@ import org.json.JSONObject;
 import java.io.File;
 import java.util.HashMap;
 import java.util.Locale;
+
+import static com.excel.remotelycontrolappstv.util.Constants.APPSTVLAUNCHER_PACKAGE_NAME;
+import static com.excel.remotelycontrolappstv.util.Constants.APPSTVLAUNCHER_RECEIVER_NAME;
 
 /**
  * Created by Sohail on 02-11-2016.
@@ -197,7 +201,8 @@ public class GetBoxConfigService extends Service {
         startService( in );
 
         // Refresh the Launcher Config so that SSID and Password is visible there
-        sendBroadcast( new Intent( "receive_update_launcher_config" ) );
+        // sendBroadcast( new Intent( "receive_update_launcher_config" ) );
+        UtilMisc.sendExplicitExternalBroadcast( context, "receive_update_launcher_config", APPSTVLAUNCHER_PACKAGE_NAME, APPSTVLAUNCHER_RECEIVER_NAME );
         //sendBroadcast( new Intent( "receive_update_hotspot_info" ) );
 
 

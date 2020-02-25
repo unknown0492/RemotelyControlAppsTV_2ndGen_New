@@ -25,22 +25,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@android:style/Theme.Translucent.NoTitleBar"
-        tools:replace="android:theme">
-        <receiver
-            android:name="com.excel.remotelycontrolappstv.receivers.ConnectivityChangeReceiver"
-            android:enabled="true"
-            android:exported="true"></receiver>
-
-        <receiver
-            android:name=".MyBroadcastReceiver"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-                <action android:name="connectivity_change" />
-                <action android:name="test_test" />
-            </intent-filter>
-        </receiver>
+        tools:replace="android:theme"
+        android:usesCleartextTraffic="true">
 
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -50,24 +36,9 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".Receiver">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <action android:name="boot_completed" />
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-                <action android:name="start_listening_service" />
-                <action android:name="update_box_bootup_time" />
-                <action android:name="update_box_active_status" />
-                <action android:name="get_preinstall_apps_info" />
-                <action android:name="get_launcher_config" />
-                <action android:name="get_box_configuration" />
-                <action android:name="broadcast_airplay_credentials" />
-                <action android:name="schedule_reboot" />
-                <action android:name="postpone_reboot" />
-                <action android:name="clear_application_cache" />
-                <action android:name="execute_script" />
-                <action android:name="MY_ACTION" />
-            </intent-filter>
+        <receiver android:name=".Receiver"
+            android:exported="true">
+
         </receiver>
 
         <service android:name=".ListeningService" />

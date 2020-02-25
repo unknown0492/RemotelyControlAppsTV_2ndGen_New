@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.icu.text.Edits;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,11 +17,12 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.excel.excelclasslibrary.UtilSharedPreferences;
-import com.excel.remotelycontrolappstv.receivers.ConnectivityChangeReceiver;
 import com.excel.remotelycontrolappstv.util.Constants;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Vector;
 
 public class MainActivity extends Activity {
 
@@ -37,9 +39,7 @@ public class MainActivity extends Activity {
     };
 
     SharedPreferences spfs;
-
     BroadcastReceiver myBroadcastReceiver;// = new MyBroadcastReceiver();
-
     BroadcastReceiver receiver;
 
     @Override
@@ -68,11 +68,32 @@ public class MainActivity extends Activity {
         }
     }
 
+    Vector<IntentFilter> intentFilterVector;
+
     private void registerAllBroadcasts(){
         receiver = new Receiver();
+        intentFilterVector = new Vector<IntentFilter>();
+        intentFilterVector.add( new IntentFilter( "connectivity_change" ) );
+        intentFilterVector.add( new IntentFilter( "start_listening_service" ) );
+        intentFilterVector.add( new IntentFilter( "update_box_bootup_time" ) );
+        intentFilterVector.add( new IntentFilter( "update_box_active_status" ) );
+        intentFilterVector.add( new IntentFilter( "get_preinstall_apps_info" ) );
+        intentFilterVector.add( new IntentFilter( "get_launcher_config" ) );
+        intentFilterVector.add( new IntentFilter( "get_box_configuration" ) );
+        intentFilterVector.add( new IntentFilter( "broadcast_airplay_credentials" ) );
+        intentFilterVector.add( new IntentFilter( "schedule_reboot" ) );
+        intentFilterVector.add( new IntentFilter( "postpone_reboot" ) );
+        intentFilterVector.add( new IntentFilter( "clear_application_cache" ) );
+        intentFilterVector.add( new IntentFilter( "execute_script" ) );
+        intentFilterVector.add( new IntentFilter( "update_box_bootup_time" ) );
 
-        IntentFilter intentFilter = new IntentFilter( "connectivity_change" );
-        registerReceiver( receiver, intentFilter );
+        //registerReceiver( receiver, new IntentFilter( "connectivity_change" ) );
+        //registerReceiver( receiver, new IntentFilter( "start_listening_service" ) );
+
+        Iterator<IntentFilter> iterator = intentFilterVector.iterator();
+        while( iterator.hasNext() ){
+            registerReceiver( receiver, iterator.next() );
+        }
 
     }
 

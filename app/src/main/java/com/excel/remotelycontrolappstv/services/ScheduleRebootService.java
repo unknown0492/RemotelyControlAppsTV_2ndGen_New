@@ -12,7 +12,9 @@ import android.util.Log;
 
 import com.excel.configuration.ConfigurationReader;
 import com.excel.excelclasslibrary.RetryCounter;
+import com.excel.excelclasslibrary.UtilMisc;
 import com.excel.excelclasslibrary.UtilShell;
+import com.excel.remotelycontrolappstv.secondgen.Receiver;
 
 import java.util.Calendar;
 
@@ -167,7 +169,8 @@ public class ScheduleRebootService extends Service {
             @Override
             public void run() {
                 Log.d( TAG, "Scheduling Reboot Alarm after "+(time/1000)+" seconds !" );
-                sendBroadcast( new Intent( "schedule_reboot" ) );
+                // sendBroadcast( new Intent( "schedule_reboot" ) );
+                UtilMisc.sendExplicitInternalBroadcast( context, "schedule_reboot", Receiver.class );
             }
         }, retryCounter.getRetryTime() );
     }

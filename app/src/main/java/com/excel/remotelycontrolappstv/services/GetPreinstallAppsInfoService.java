@@ -10,11 +10,15 @@ import android.util.Log;
 
 import com.excel.configuration.PreinstallAppsManager;
 import com.excel.excelclasslibrary.RetryCounter;
+import com.excel.excelclasslibrary.UtilMisc;
 import com.excel.excelclasslibrary.UtilNetwork;
 import com.excel.excelclasslibrary.UtilURL;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+
+import static com.excel.remotelycontrolappstv.util.Constants.APPSTVLAUNCHER_PACKAGE_NAME;
+import static com.excel.remotelycontrolappstv.util.Constants.APPSTVLAUNCHER_RECEIVER_NAME;
 
 /**
  * Created by Sohail on 02-11-2016.
@@ -79,9 +83,9 @@ public class GetPreinstallAppsInfoService extends Service {
                         pam.writePreinstallAppsFile( jsonObject.getJSONArray( "info" ) );
 
                         // Send Broadcast to DataDownloader to download new preinstall apks from CMS and install them, if their md5 is different
-                        Intent inn = new Intent( "download_preinstall_apps" );
+                        Intent inn = new Intent();
                         inn.putExtra( "json", s );
-                        sendBroadcast( inn );
+                        UtilMisc.sendExplicitExternalBroadcast( context, inn, "download_preinstall_apps", APPSTVLAUNCHER_PACKAGE_NAME, APPSTVLAUNCHER_RECEIVER_NAME );
 
                         retryCounter.reset();
                     }

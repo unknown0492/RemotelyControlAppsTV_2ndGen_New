@@ -17,8 +17,8 @@ import com.excel.excelclasslibrary.UtilURL;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import static com.excel.remotelycontrolappstv.util.Constants.APPSTVLAUNCHER_PACKAGE_NAME;
-import static com.excel.remotelycontrolappstv.util.Constants.APPSTVLAUNCHER_RECEIVER_NAME;
+import static com.excel.excelclasslibrary.Constants.APPSTVLAUNCHER_PACKAGE_NAME;
+import static com.excel.excelclasslibrary.Constants.APPSTVLAUNCHER_RECEIVER_NAME;
 
 /**
  * Created by Sohail on 02-11-2016.

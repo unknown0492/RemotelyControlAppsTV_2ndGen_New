@@ -9,6 +9,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.excel.configuration.ConfigurationReader;
+import com.excel.excelclasslibrary.Constants;
 import com.excel.excelclasslibrary.UtilMisc;
 import com.excel.excelclasslibrary.UtilSharedPreferences;
 import com.excel.excelclasslibrary.UtilShell;
@@ -115,7 +116,8 @@ public class Receiver extends BroadcastReceiver {
                 /*Intent in5 = new Intent( context, Receiver.class );
                 in5.setAction( "get_wallpapers" );
                 context.sendBroadcast( in5 );*/
-                UtilMisc.sendExplicitInternalBroadcast( context, "get_wallpapers", Receiver.class );
+                UtilMisc.sendExplicitExternalBroadcast( context, "get_wallpapers", Constants.DATADOWNLOADER_PACKAGE_NAME, Constants.DATADOWNLOADER_RECEIVER_NAME );
+                //UtilMisc.sendExplicitInternalBroadcast( context, "get_wallpapers", Receiver.class );
 
                 // 7. Schedule Reboot Alarm
                 /*Intent in6 = new Intent( context, Receiver.class );
@@ -177,52 +179,97 @@ public class Receiver extends BroadcastReceiver {
 
     private void startListeningService( Context context ){
         Intent in = new Intent( context, ListeningService.class );
-        context.startService( in );
+        if( Build.VERSION.SDK_INT >= Build.VERSION_CODES.O ){
+            context.startForegroundService( in );
+        }
+        else{
+            context.startService( in );
+        }
     }
 
     private void updateBoxBootUpTime( Context context ){
 
-        if( ! isBoxBootupTimeUpdated() ) {
+        if( ! isBoxBootupTimeUpdated() ){
             Log.i( TAG, "Updating Box Bootup Time" );
-            Intent in = new Intent(context, UpdateBoxBootStatusService.class);
-            context.startService(in);
+            Intent in = new Intent( context, UpdateBoxBootStatusService.class );
+            if( Build.VERSION.SDK_INT >= Build.VERSION_CODES.O ){
+                context.startForegroundService( in );
+            }
+            else{
+                context.startService( in );
+            }
         }
     }
 
     private void updateBoxActiveStatus( Context context ){
         Intent in = new Intent( context, UpdateBoxActiveStatusService.class );
-        context.startService( in );
+        if( Build.VERSION.SDK_INT >= Build.VERSION_CODES.O ){
+            context.startForegroundService( in );
+        }
+        else{
+            context.startService( in );
+        }
     }
 
     private void getPreinstallAppsInfo( Context context ){
         Intent in = new Intent( context, GetPreinstallAppsInfoService.class );
-        context.startService( in );
+        if( Build.VERSION.SDK_INT >= Build.VERSION_CODES.O ){
+            context.startForegroundService( in );
+        }
+        else{
+            context.startService( in );
+        }
     }
 
     private void getLauncherConfig( Context context ){
         Intent in = new Intent( context, GetLauncherConfigService.class );
-        context.startService( in );
+        if( Build.VERSION.SDK_INT >= Build.VERSION_CODES.O ){
+            context.startForegroundService( in );
+        }
+        else{
+            context.startService( in );
+        }
     }
 
     private void getBoxConfiguration( Context context ){
         Intent in = new Intent( context, GetBoxConfigService.class );
-        context.startService( in );
+        if( Build.VERSION.SDK_INT >= Build.VERSION_CODES.O ){
+            context.startForegroundService( in );
+        }
+        else{
+            context.startService( in );
+        }
     }
 
     private void broadcastAirplayCredentials( Context context ){
         Intent in = new Intent( context, BroadcastAirplayService.class );
-        context.startService( in );
+        if( Build.VERSION.SDK_INT >= Build.VERSION_CODES.O ){
+            context.startForegroundService( in );
+        }
+        else{
+            context.startService( in );
+        }
     }
 
     private void scheduleReboot( Context context, boolean is_schedule ){
         Intent in = new Intent( context, ScheduleRebootService.class );
         in.putExtra( "is_schedule", is_schedule );
-        context.startService( in );
+        if( Build.VERSION.SDK_INT >= Build.VERSION_CODES.O ){
+            context.startForegroundService( in );
+        }
+        else{
+            context.startService( in );
+        }
     }
 
     private void clearApplicationCache( Context context ){
         Intent in = new Intent( context, ClearCacheService.class );
-        context.startService( in );
+        if( Build.VERSION.SDK_INT >= Build.VERSION_CODES.O ){
+            context.startForegroundService( in );
+        }
+        else{
+            context.startService( in );
+        }
     }
 
     private void setConnectivityBroadcastFired( boolean is_it ){

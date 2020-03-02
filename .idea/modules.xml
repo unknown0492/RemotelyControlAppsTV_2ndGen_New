@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../ExcelClassLibrary/app/ExcelClassLibrary.iml" filepath="$PROJECT_DIR$/../ExcelClassLibrary/app/ExcelClassLibrary.iml" />
-      <module fileurl="file://$PROJECT_DIR$/RemotelyControlAppsTV_2ndGen.iml" filepath="$PROJECT_DIR$/RemotelyControlAppsTV_2ndGen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../ExcelClassLibrary/app/ExcelClassLibrary.iml" filepath="$PROJECT_DIR$/../../ExcelClassLibrary/app/ExcelClassLibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RemotelyControlAppsTv_2ndGen.iml" filepath="$PROJECT_DIR$/RemotelyControlAppsTv_2ndGen.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

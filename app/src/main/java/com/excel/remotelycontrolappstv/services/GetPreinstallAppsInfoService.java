@@ -1,24 +1,35 @@
 package com.excel.remotelycontrolappstv.services;
 
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
 import android.util.Log;
+
+import androidx.core.app.NotificationCompat;
 
 import com.excel.configuration.PreinstallAppsManager;
 import com.excel.excelclasslibrary.RetryCounter;
 import com.excel.excelclasslibrary.UtilMisc;
 import com.excel.excelclasslibrary.UtilNetwork;
 import com.excel.excelclasslibrary.UtilURL;
+import com.excel.remotelycontrolappstv.secondgen.R;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import static com.excel.remotelycontrolappstv.util.Constants.APPSTVLAUNCHER_PACKAGE_NAME;
-import static com.excel.remotelycontrolappstv.util.Constants.APPSTVLAUNCHER_RECEIVER_NAME;
+import static com.excel.excelclasslibrary.Constants.APPSTVLAUNCHER_PACKAGE_NAME;
+import static com.excel.excelclasslibrary.Constants.APPSTVLAUNCHER_RECEIVER_NAME;
+import static com.excel.excelclasslibrary.Constants.DATADOWNLOADER_PACKAGE_NAME;
+import static com.excel.excelclasslibrary.Constants.DATADOWNLOADER_RECEIVER_NAME;
 
 /**
  * Created by Sohail on 02-11-2016.
@@ -48,8 +59,33 @@ public class GetPreinstallAppsInfoService extends Service {
         return START_STICKY;
     }
 
+    @Override
+    public void onCreate() {
+        super.onCreate();
+
+        Bitmap icon = BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher );
+
+        NotificationManager notificationManager = (NotificationManager) getSystemService( Context.NOTIFICATION_SERVICE );
+        NotificationCompat.Builder notificationBuilder;
+        notificationBuilder = new NotificationCompat.Builder(this, "test" );
+        notificationBuilder.setSmallIcon( R.drawable.ic_launcher );
+        notificationManager.notify(0, notificationBuilder.build() );
+
+        if ( Build.VERSION.SDK_INT >= Build.VERSION_CODES.O ) {
+            NotificationChannel channel = new NotificationChannel("test", TAG, NotificationManager.IMPORTANCE_HIGH );
+            notificationManager.createNotificationChannel( channel );
+
+            Notification notification = new Notification.Builder( getApplicationContext(), "test" ).build();
+            startForeground(1, notification );
+        }
+        else {
+            // startForeground(1, notification);
+        }
+    }
+
     private void updateApps(){
         new Thread(new Runnable() {
+
             @Override
             public void run() {
                 String s = UtilNetwork.makeRequestForData( UtilURL.getWebserviceURL(), "POST",
@@ -85,7 +121,7 @@ public class GetPreinstallAppsInfoService extends Service {
                         // Send Broadcast to DataDownloader to download new preinstall apks from CMS and install them, if their md5 is different
                         Intent inn = new Intent();
                         inn.putExtra( "json", s );
-                        UtilMisc.sendExplicitExternalBroadcast( context, inn, "download_preinstall_apps", APPSTVLAUNCHER_PACKAGE_NAME, APPSTVLAUNCHER_RECEIVER_NAME );
+                        UtilMisc.sendExplicitExternalBroadcast( context, inn, "download_preinstall_apps", DATADOWNLOADER_PACKAGE_NAME, DATADOWNLOADER_RECEIVER_NAME );
 
                         retryCounter.reset();
                     }
@@ -98,56 +134,7 @@ public class GetPreinstallAppsInfoService extends Service {
         }).start();
     }
 
-    /*class UpdateApps extends AsyncTask<String, Void, String> {
 
-        @Override
-        protected String doInBackground( String... params ) {
-
-            return UtilNetwork.makeRequestForData( UtilURL.getWebserviceURL(), "POST",
-                    UtilURL.getURLParamsFromPairs( new String[][]{
-                            { "mac_address", UtilNetwork.getMacAddress( context ) },
-                            { "what_do_you_want", "get_preinstall_apps_info" }
-                    } ));
-        }
-
-        @Override
-        protected void onPostExecute( String s ) {
-            super.onPostExecute( s );
-
-            if( s == null ){
-                Log.d( TAG, "Failed to retrieve List of Preinstall Apps" );
-                setRetryTimer();
-                return;
-            }
-
-            Log.d( TAG, "response : "+s );
-            JSONArray jsonArray = null;
-            JSONObject jsonObject = null;
-
-            try{
-                jsonArray = new JSONArray( s );
-                jsonObject = jsonArray.getJSONObject( 0 );
-
-                String type = jsonObject.getString( "type" );
-                if ( type.equals( "error" ) ){
-                    Log.e( TAG, "Failed to update preinstall apps" );
-                    setRetryTimer();
-                    return;
-                }
-                else if( type.equals( "success" ) ){
-                    PreinstallAppsManager pam = new PreinstallAppsManager();
-                    pam.writePreinstallAppsFile( jsonObject.getJSONArray( "info" ) );
-
-                    retryCounter.reset();
-                }
-            }
-            catch( Exception e ){
-                e.printStackTrace();
-                setRetryTimer();
-            }
-
-        }
-    }*/
 
     private void setRetryTimer(){
         final long time = retryCounter.getRetryTime();
@@ -158,7 +145,7 @@ public class GetPreinstallAppsInfoService extends Service {
 
             @Override
             public void run() {
-                Log.d( TAG, "updating preinstall apps after "+(time/1000)+" seconds !" );
+                Log.d( TAG, "Updating preinstall apps after "+(time/1000)+" seconds !" );
                 /*UpdateApps updateApps = new UpdateApps();
                 updateApps.execute( "" );*/
                 updateApps();

@@ -16,10 +16,10 @@ import org.json.JSONObject;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 
-import static com.excel.remotelycontrolappstv.util.Constants.CHROMECAST_STREAMING_PACKAGE_NAME;
-import static com.excel.remotelycontrolappstv.util.Constants.CHROMECAST_STREAMING_RECEIVER_NAME;
-import static com.excel.remotelycontrolappstv.util.Constants.DATADOWNLOADER_PACKAGE_NAME;
-import static com.excel.remotelycontrolappstv.util.Constants.DATADOWNLOADER_RECEIVER_NAME;
+import static com.excel.excelclasslibrary.Constants.CHROMECAST_STREAMING_PACKAGE_NAME;
+import static com.excel.excelclasslibrary.Constants.CHROMECAST_STREAMING_RECEIVER_NAME;
+import static com.excel.excelclasslibrary.Constants.DATADOWNLOADER_PACKAGE_NAME;
+import static com.excel.excelclasslibrary.Constants.DATADOWNLOADER_RECEIVER_NAME;
 
 public class ListeningService extends Service {
 	

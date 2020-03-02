@@ -39,7 +39,6 @@ public class MainActivity extends Activity {
     };
 
     SharedPreferences spfs;
-    BroadcastReceiver myBroadcastReceiver;// = new MyBroadcastReceiver();
     BroadcastReceiver receiver;
 
     @Override
@@ -87,8 +86,6 @@ public class MainActivity extends Activity {
         intentFilterVector.add( new IntentFilter( "execute_script" ) );
         intentFilterVector.add( new IntentFilter( "update_box_bootup_time" ) );
 
-        //registerReceiver( receiver, new IntentFilter( "connectivity_change" ) );
-        //registerReceiver( receiver, new IntentFilter( "start_listening_service" ) );
 
         Iterator<IntentFilter> iterator = intentFilterVector.iterator();
         while( iterator.hasNext() ){

@@ -11,8 +11,8 @@ import com.excel.excelclasslibrary.UtilMisc;
 import com.excel.remotelycontrolappstv.secondgen.Receiver;
 import com.excel.remotelycontrolappstv.util.Hotspot;
 
-import static com.excel.remotelycontrolappstv.util.Constants.APPSTVLAUNCHER_PACKAGE_NAME;
-import static com.excel.remotelycontrolappstv.util.Constants.APPSTVLAUNCHER_RECEIVER_NAME;
+import static com.excel.excelclasslibrary.Constants.APPSTVLAUNCHER_PACKAGE_NAME;
+import static com.excel.excelclasslibrary.Constants.APPSTVLAUNCHER_RECEIVER_NAME;
 
 public class HotspotStarterService extends Service{
     Context context = this;

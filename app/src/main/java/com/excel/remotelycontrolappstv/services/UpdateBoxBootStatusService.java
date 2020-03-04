@@ -1,17 +1,25 @@
 package com.excel.remotelycontrolappstv.services;
 
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
 import android.util.Log;
 
+import androidx.core.app.NotificationCompat;
+
 import com.excel.configuration.ConfigurationReader;
 import com.excel.excelclasslibrary.RetryCounter;
 import com.excel.excelclasslibrary.UtilNetwork;
 import com.excel.excelclasslibrary.UtilURL;
+import com.excel.remotelycontrolappstv.secondgen.R;
 
 public class UpdateBoxBootStatusService extends Service{
 
@@ -40,6 +48,30 @@ public class UpdateBoxBootStatusService extends Service{
         update();
 
         return START_STICKY;
+    }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+
+        Bitmap icon = BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher);
+
+        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        NotificationCompat.Builder notificationBuilder;
+        notificationBuilder = new NotificationCompat.Builder(this, "test" );
+        notificationBuilder.setSmallIcon( R.drawable.ic_launcher );
+        notificationManager.notify(0, notificationBuilder.build());
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel( "test",TAG, NotificationManager.IMPORTANCE_HIGH);
+            notificationManager.createNotificationChannel( channel );
+
+            Notification notification = new Notification.Builder(getApplicationContext(),"test").build();
+            startForeground(1, notification);
+        }
+        else {
+            // startForeground(1, notification);
+        }
     }
 
     private void update(){

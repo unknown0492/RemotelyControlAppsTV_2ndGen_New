@@ -11,7 +11,11 @@
     tools:context="com.excel.remotelycontrolappstv.secondgen.MainActivity">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="" />
+        android:layout_centerInParent="true"
+        android:textSize="25sp"
+        android:text="Press OK to Exit this Screen !" />
+
 </RelativeLayout>

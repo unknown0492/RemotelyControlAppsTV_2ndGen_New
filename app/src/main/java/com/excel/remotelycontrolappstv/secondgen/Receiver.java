@@ -71,7 +71,7 @@ public class Receiver extends BroadcastReceiver {
 
 
         configurationReader = ConfigurationReader.reInstantiate();
-        Toast.makeText( context, intent.getAction(), Toast.LENGTH_SHORT ).show();
+        //Toast.makeText( context, intent.getAction(), Toast.LENGTH_SHORT ).show();
 
         //if( action.equals( "android.net.conn.CONNECTIVITY_CHANGE" ) ){ // Doesnt work anymore because it is deprecated in Android 7.0+
         if( action.equals( "connectivity_change" ) ){

@@ -12,6 +12,7 @@ import android.icu.text.Edits;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -100,6 +101,18 @@ public class MainActivity extends Activity {
 
         unregisterReceiver( receiver );
 
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+
+        if( ( keyCode == KeyEvent.KEYCODE_ENTER ) ||
+                ( keyCode == KeyEvent.KEYCODE_DPAD_CENTER ) ){
+            finish();
+            return true;
+        }
+
+        return super.onKeyDown(keyCode, event);
     }
 
     @Override
